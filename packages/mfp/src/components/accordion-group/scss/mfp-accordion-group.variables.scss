@@ -1,0 +1,10 @@
+/* -------------------------------------------------------------------------- */
+/*                          Accordion group custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-accordion-group--gap: Accordion group distance between elements
+  */
+  --mfp-accordion-group--gap: theme(spacing.xs);
+}

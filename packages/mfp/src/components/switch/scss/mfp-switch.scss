@@ -1,0 +1,48 @@
+/* -------------------------------------------------------------------------- */
+/*                                Switch styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-switch.variables';
+
+:host {
+  @apply inline-block;
+}
+
+:host(.full-width) {
+  @apply is-full;
+}
+
+.mfp-switch {
+  @apply flex cursor-pointer select-none items-center rounded-s transition-colors duration-300 p-b-2 p-i-2;
+
+  justify-content: var(--mfp-switch--justify-content);
+
+  // Display background on hover (if enabled)
+  &.has-background:not(.is-disabled):hover {
+    @apply bg-hover-ui-primary;
+  }
+
+  &.is-disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+}
+
+.mfp-switch--input:not(:disabled):focus-visible {
+  ~ .mfp-switch--control {
+    @apply focus;
+  }
+}
+
+.mfp-switch--control__dot {
+  @apply absolute start-xs2 rounded-full bg-icon-inverse bs-[--mfp-switch--dot-size] is-[--mfp-switch--dot-size];
+  @apply group-[&.is-checked]:start-[calc(100%_-_var(--mfp-switch--dot-size)_-_var(--mfp-spacing-xs2))] group-[&.is-checked]:bg-[--mfp-icon--alt];
+  @apply transition-all duration-300;
+}
+
+.mfp-switch--control__icon {
+  --mfp-icon--size: var(--mfp-switch--dot-size) !important;
+
+  &::part(base) {
+    @apply flex;
+  }
+}

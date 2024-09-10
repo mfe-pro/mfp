@@ -1,0 +1,9 @@
+:root {
+  --mfp-icon--direction: 1;
+  --mfp-side-menu--width: 256px;
+  --mfp-side-menu--width-collapse: 72px;
+}
+
+[dir='rtl'] {
+  --mfp-icon--direction: -1;
+}

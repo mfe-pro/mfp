@@ -1,0 +1,81 @@
+{
+  "extends": "nx/presets/npm.json",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "{workspaceRoot}/config/**/*",
+      "{workspaceRoot}/package.json",
+      "{workspaceRoot}/tailwind.config.ts"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.ts",
+      "!{projectRoot}/.eslintrc.json"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": [{ "target": "build", "projects": "mfp" }],
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
+      "cache": true
+    },
+    "e2e": {
+      "dependsOn": [{ "target": "build", "projects": "mfp" }],
+      "inputs": ["default", "^production"],
+      "cache": true
+    },
+    "icons": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "prepare-storybook": {
+      "cache": true
+    },
+    "storybook-build": {
+      "dependsOn": [
+        { "target": "prepare-storybook", "projects": "mfp" },
+        { "target": "build", "projects": "mfp" },
+        { "target": "storybook-build-css", "projects": "mfp" }
+      ],
+      "cache": true
+    },
+    "storybook-build-css": {
+      "dependsOn": [{ "target": "build", "projects": "mfp-tailwindcss" }],
+      "cache": true
+    },
+    "stylelint": {
+      "cache": true
+    },
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/tools/eslint-rules/**/*"]
+    }
+  },
+  "nxCloudAccessToken": "",
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "babel": true
+      }
+    }
+  },
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": true
+    }
+  }
+}

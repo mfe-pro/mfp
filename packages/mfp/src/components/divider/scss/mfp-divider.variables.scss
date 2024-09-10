@@ -1,0 +1,12 @@
+/* -------------------------------------------------------------------------- */
+/*                          Divider custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-divider--color: Divider color
+   * @prop --mfp-divider--title-marginX: Divider space between title and delimiters
+   */
+  --mfp-divider--color: theme(colors.stroke.primary);
+  --mfp-divider--title-marginX: theme(spacing.m);
+}

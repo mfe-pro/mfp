@@ -1,0 +1,39 @@
+/* -------------------------------------------------------------------------- */
+/*                          Tab custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-tab--font-size - Font size
+   * @prop --mfp-tab--font-weight - Font weight
+   * @prop --mfp-tab--line-height - Line height
+   * @prop --mfp-tab--label-icon-gap - Gap between label and icon
+   * @prop --mfp-tab--padding-vertical-small - Vertical padding for small tab
+   * @prop --mfp-tab--padding-horizontal-small - Horizontal padding for small tab
+   * @prop --mfp-tab--padding-vertical-medium - Vertical padding for medium tab
+   * @prop --mfp-tab--padding-horizontal-medium - Horizontal padding for medium tab
+   * @prop --mfp-tab--padding-vertical-large - Vertical padding for large tab
+   * @prop --mfp-tab--padding-horizontal-large - Horizontal padding for large tab
+   * @prop --mfp-tab--icon-size-small - Icon size for small tab
+   * @prop --mfp-tab--icon-size-medium - Icon size for medium tab
+   * @prop --mfp-tab--icon-size-large - Icon size for large tab
+   */
+  --mfp-tab--font-size: theme(fontSize.m);
+  --mfp-tab--font-weight: theme(fontWeight.medium);
+  --mfp-tab--line-height: theme(lineHeight.regular);
+
+  --mfp-tab--label-icon-gap: theme(spacing.xs);
+
+  --mfp-tab--padding-vertical-small: theme(spacing.xs2);
+  --mfp-tab--padding-horizontal-small: theme(spacing.m);
+
+  --mfp-tab--padding-vertical-medium: theme(spacing.xs);
+  --mfp-tab--padding-horizontal-medium: theme(spacing.l);
+
+  --mfp-tab--padding-vertical-large: theme(spacing.s);
+  --mfp-tab--padding-horizontal-large: theme(spacing.l);
+
+  --mfp-tab--icon-size-small: 20px;
+  --mfp-tab--icon-size-medium: 24px;
+  --mfp-tab--icon-size-large: 24px;
+}

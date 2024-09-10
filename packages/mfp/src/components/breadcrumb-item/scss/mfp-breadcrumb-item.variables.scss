@@ -1,0 +1,43 @@
+/* -------------------------------------------------------------------------- */
+/*                          Breadcrumb item custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+  * @prop --mfp-breadcrumb-item--background: Background color of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--box-shadow: Box shadow of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--border-color: Border color of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--border-style: Border style of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--border-width: Border width of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--border-radius: Border radius of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--line-height: Line height of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--text-color: Text color of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--text-size: Text size of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--text-size-separator: Text size of the breadcrumb item separator.
+  * @prop --mfp-breadcrumb-item--padding-start: Padding start of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--padding-end: Padding end of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--paddingY: Padding top and bottom of the breadcrumb item.
+  * @prop --mfp-breadcrumb-item--padding-start-separator: Padding start of the breadcrumb item separator.
+  * @prop --mfp-breadcrumb-item--padding-end-separator: Padding end of the breadcrumb item separator.
+  */
+
+  --mfp-breadcrumb-item--background: theme(colors.transparent);
+  --mfp-breadcrumb-item--box-shadow: none;
+
+  --mfp-breadcrumb-item--border-color: theme(colors.transparent);
+  --mfp-breadcrumb-item--border-style: none;
+  --mfp-breadcrumb-item--border-width: theme(borderWidth.s);
+  --mfp-breadcrumb-item--border-radius: theme(borderRadius.s);
+
+  --mfp-breadcrumb-item--line-height: theme(lineHeight.regular);
+  --mfp-breadcrumb-item--text-color: theme(colors.text.secondary);
+  --mfp-breadcrumb-item--text-size: theme(fontSize.s);
+  --mfp-breadcrumb-item--text-size-separator: theme(fontSize.xs);
+
+  --mfp-breadcrumb-item--padding-start: theme(spacing.xs2);
+  --mfp-breadcrumb-item--padding-end: theme(spacing.xs2);
+  --mfp-breadcrumb-item--paddingY: theme(spacing.xs);
+
+  --mfp-breadcrumb-item--padding-start-separator: theme(spacing.xs2);
+  --mfp-breadcrumb-item--padding-end-separator: theme(spacing.xs2);
+}

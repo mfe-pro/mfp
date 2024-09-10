@@ -1,0 +1,21 @@
+/* -------------------------------------------------------------------------- */
+/*                         Step item custom properties                        */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-step-item--prefix-color - Color of the prefix icon
+   * @prop --mfp-step-item--prefix-color-current - Color of the prefix icon when current
+   * @prop --mfp-step-item--prefix-color-completed - Color of the prefix icon when completed
+   * @prop --mfp-step-item--prefix-color-error - Color of the prefix icon when error
+   * @prop --mfp-step-item--prefix-num-size - Size of the prefix number
+   * @prop --mfp-step-item--prefix-num-bg-color - Background color of the prefix number
+   */
+  --mfp-step-item--prefix-color: theme(colors.icon.secondary);
+  --mfp-step-item--prefix-color-current: theme(colors.icon.brand);
+  --mfp-step-item--prefix-color-completed: theme(colors.icon.success);
+  --mfp-step-item--prefix-color-error: theme(colors.icon.danger);
+
+  --mfp-step-item--prefix-num-size: theme(spacing.xl);
+  --mfp-step-item--prefix-num-bg-color: theme(colors.ui.secondary);
+}

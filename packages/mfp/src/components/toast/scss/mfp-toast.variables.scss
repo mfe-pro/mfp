@@ -1,0 +1,42 @@
+/* -------------------------------------------------------------------------- */
+/*                          Toast custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-toast--background: Toast background color
+   * @prop --mfp-toast--box-shadow: Toast box shadow
+   * @prop --mfp-toast--padding-y: Toast vertical padding
+   * @prop --mfp-toast--padding-x: Toast horizontal padding
+   * @prop --mfp-toast--gap: Toast distance between icon and text
+   * @prop --mfp-toast--border-radius: Toast border radius
+   * @prop --mfp-toast--border-color: Toast border color
+   * @prop --mfp-toast--border-style: Toast border style
+   * @prop --mfp-toast--border-width: Toast border width
+   * @prop --mfp-toast--icon-color-info: Toast icon color when type is 'info'
+   * @prop --mfp-toast--icon-color-success: Toast icon color when type is 'success'
+   * @prop --mfp-toast--icon-color-alert: Toast icon color when type is 'alert'
+   * @prop --mfp-toast--icon-color-error: Toast icon color when type is 'error'
+   * @prop --mfp-toast--icon-color-loading: Toast icon color when type is 'loading'
+   * @prop --mfp-toast--icon-color-custom: Toast icon color when type is 'custom'
+   */
+
+  --mfp-toast--background: theme(colors.ui.primary);
+  --mfp-toast--box-shadow: theme(boxShadow.l);
+
+  --mfp-toast--padding-y: theme(spacing.s);
+  --mfp-toast--padding-x: theme(spacing.m);
+  --mfp-toast--gap: theme(spacing.xs);
+
+  --mfp-toast--border-radius: theme(borderRadius.s);
+  --mfp-toast--border-width: unset;
+  --mfp-toast--border-style: none;
+  --mfp-toast--border-color: theme(colors.transparent);
+
+  --mfp-toast--icon-color-info: theme(colors.icon.brand);
+  --mfp-toast--icon-color-success: theme(colors.icon.success);
+  --mfp-toast--icon-color-alert: theme(colors.icon.warning);
+  --mfp-toast--icon-color-error: theme(colors.icon.danger);
+  --mfp-toast--icon-color-loading: theme(colors.icon.brand);
+  --mfp-toast--icon-color-custom: theme(colors.icon.primary);
+}

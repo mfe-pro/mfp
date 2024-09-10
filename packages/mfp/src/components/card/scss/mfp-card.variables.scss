@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------- */
+/*                   Card custom properties                  */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-card--borderColor - Card border color
+   * @prop --mfp-card--borderRadius - Card border radius
+   * @prop --mfp-card--borderStyle - Card border style
+   * @prop --mfp-card--borderWidth - Card border width
+
+   * @prop --mfp-card--padding - Card padding
+   * @prop --mfp-card--paddingMinimal - Minimal card padding
+   * @prop --mfp-card--background - Card background color
+   */
+
+  --mfp-card--borderColor: theme(colors.transparent);
+  --mfp-card--borderRadius: theme(borderRadius.m);
+  --mfp-card--borderStyle: solid;
+  --mfp-card--borderWidth: theme(borderWidth.0);
+
+  --mfp-card--padding: theme(spacing.l);
+  --mfp-card--paddingMinimal: theme(spacing.xs);
+  --mfp-card--background: theme(colors.bg.secondary);
+}

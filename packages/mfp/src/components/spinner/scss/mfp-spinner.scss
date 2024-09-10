@@ -1,0 +1,105 @@
+/* -------------------------------------------------------------------------- */
+/*                               Spinner styles                               */
+/* -------------------------------------------------------------------------- */
+@import './mfp-spinner.variables';
+
+:host {
+  @apply relative inline-block;
+}
+
+.mfp-spinner {
+  @apply flex;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Spinner loader size                            */
+/* -------------------------------------------------------------------------- */
+
+.mfp-spinner--loader.large {
+  @apply bs-[--mfp-spinner--size-large] is-[--mfp-spinner--size-large];
+}
+
+.mfp-spinner--loader.medium {
+  @apply bs-[--mfp-spinner--size-medium] is-[--mfp-spinner--size-medium];
+}
+
+.mfp-spinner--loader.small {
+  @apply bs-[--mfp-spinner--size-small] is-[--mfp-spinner--size-small];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Text position                               */
+/* -------------------------------------------------------------------------- */
+
+.text-left,
+.text-right {
+  @apply flex-row items-center;
+
+  &.has-text {
+    @apply gap-x-m;
+  }
+}
+
+.text-left {
+  .mfp-spinner--loader,
+  .mfp-spinner--icon {
+    @apply order-2;
+  }
+
+  .mfp-spinner--text {
+    @apply order-1;
+  }
+}
+
+.text-right {
+  .mfp-spinner--loader,
+  .mfp-spinner--icon {
+    @apply order-1;
+  }
+
+  .mfp-spinner--text {
+    @apply order-2;
+  }
+}
+
+.text-above,
+.text-bellow {
+  @apply flex-col items-center;
+
+  &.has-text {
+    @apply gap-y-m;
+  }
+}
+
+.text-above {
+  .mfp-spinner--loader,
+  .mfp-spinner--icon {
+    @apply order-2;
+  }
+
+  .mfp-spinner--text {
+    @apply order-1;
+  }
+}
+
+.text-bellow {
+  .mfp-spinner--loader,
+  .mfp-spinner--icon {
+    @apply order-1;
+  }
+
+  .mfp-spinner--text {
+    @apply order-2;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                      Animate slotted icon if provided                      */
+/* -------------------------------------------------------------------------- */
+
+.is-animated {
+  .mfp-spinner--icon,
+  .mfp-spinner--loader > svg {
+    @include animation-spin;
+  }
+}

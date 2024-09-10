@@ -1,0 +1,43 @@
+/* -------------------------------------------------------------------------- */
+/*                          Button custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-button--border-color - Button border color
+   * @prop --mfp-button--border-radius - Button border radius
+   * @prop --mfp-button--border-style - Button border style
+   * @prop --mfp-button--border-width - Button border width
+   * @prop --mfp-button--small-height - Button small height
+   * @prop --mfp-button--small-paddingX - Button small padding X
+   * @prop --mfp-button--small-paddingY - Button small padding Y
+   * @prop --mfp-button--small-font-size - Button small font size
+   * @prop --mfp-button--medium-height - Button medium height
+   * @prop --mfp-button--medium-paddingX - Button medium padding X
+   * @prop --mfp-button--medium-paddingY - Button medium padding Y
+   * @prop --mfp-button--medium-font-size - Button medium font size
+   * @prop --mfp-button--large-height - Button large height
+   * @prop --mfp-button--large-paddingX - Button large padding X
+   * @prop --mfp-button--large-paddingY - Button large padding Y
+   * @prop --mfp-button--large-font-size - Button large font size
+   */
+  --mfp-button--border-color: theme(colors.transparent);
+  --mfp-button--border-radius: theme(borderRadius.m);
+  --mfp-button--border-style: solid;
+  --mfp-button--border-width: theme(borderWidth.0);
+
+  --mfp-button--small-height: 32px;
+  --mfp-button--small-paddingX: theme(spacing.xs);
+  --mfp-button--small-paddingY: theme(spacing.xs2);
+  --mfp-button--small-font-size: theme(fontSize.m);
+
+  --mfp-button--medium-height: 48px;
+  --mfp-button--medium-paddingX: theme(spacing.m);
+  --mfp-button--medium-paddingY: theme(spacing.s);
+  --mfp-button--medium-font-size: theme(fontSize.m);
+
+  --mfp-button--large-height: 56px;
+  --mfp-button--large-paddingX: theme(spacing.l);
+  --mfp-button--large-paddingY: theme(spacing.m);
+  --mfp-button--large-font-size: theme(fontSize.m);
+}

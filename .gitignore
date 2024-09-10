@@ -1,0 +1,58 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+.nx/*
+!.nx/workflows
+!.nx/nxw.js
+/dist
+/out-tsc
+/tmp/**
+chromatic-diagnostics.json
+
+# source files to ignore
+packages/mfp/.stencil
+packages/mfp/.storybook/assets/css/stories.css
+packages/mfp/vite.config.*.timestamp-*
+packages/mfp/custom-elements.json
+packages/mfp/src/components/icon/svg/**
+packages/mfp/src/_storybook/CHANGELOG.md
+packages/mfp-react/src/react-component-lib
+packages/mfp-react/src/components.ts
+!.gitkeep
+
+# dependencies
+node_modules
+
+# IDEs and editors
+/.idea
+.history
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/stencil-component-starter.code-snippets
+
+# misc
+.cache
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+package.e2e.json

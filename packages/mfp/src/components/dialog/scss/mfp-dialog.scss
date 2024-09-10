@@ -1,0 +1,71 @@
+/* -------------------------------------------------------------------------- */
+/*                                Dialog styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-dialog.variables';
+
+:host {
+  @apply invisible #{!important};
+}
+
+:host(.mfp-dialog--open) {
+  @apply visible #{!important};
+}
+
+/* --------------------------------- Dialog --------------------------------- */
+
+.mfp-dialog {
+  @apply absolute flex flex-col gap-[--mfp-dialog--content-footer-gap] p-b-0 p-i-0;
+  @apply bg-[--mfp-dialog--background] text-[--mfp-dialog--text-color] shadow-[shadow:--mfp-dialog--box-shadow];
+  @apply rounded-[--mfp-dialog--border-radius] border-[length:--mfp-dialog--border-width] border-[color:--mfp-dialog--border-color];
+  // If mobile resolution, dialog will be full width
+  @apply is-[90vw];
+
+  border-style: var(--mfp-dialog--border-style);
+
+  &.small {
+    @apply sm:is-[--mfp-dialog--width-small];
+  }
+
+  &.medium {
+    @apply sm:is-[--mfp-dialog--width-medium];
+  }
+
+  &.large {
+    @apply sm:is-[--mfp-dialog--width-large];
+  }
+}
+
+/* ----------------------------- Dialog backdrop ---------------------------- */
+
+.mfp-dialog::backdrop {
+  @apply bg-[--mfp-dialog--background-backdrop] opacity-0 transition-[opacity] duration-300 ease-in-out;
+}
+
+.mfp-dialog[open]::backdrop {
+  @apply opacity-60;
+}
+
+/* ------------------------------ Dialog header ----------------------------- */
+
+.mfp-dialog--header {
+  @apply sticky flex items-center gap-m p-b-[--mfp-dialog--padding] p-be-0 p-i-[--mfp-dialog--padding] inset-bs-0;
+}
+
+/* ------------------------------ Dialog footer ----------------------------- */
+
+.mfp-dialog--footer {
+  @apply sticky flex items-center justify-end gap-xs is-full p-b-[--mfp-dialog--padding] p-bs-0 p-i-[--mfp-dialog--padding] inset-bs-[100%];
+}
+
+/* --------------------------- Dialog close button -------------------------- */
+
+.mfp-dialog--close {
+  --mfp-radius--m: theme(borderRadius.s);
+  --mfp-button--small-paddingX: theme(spacing.xs2);
+  --mfp-button--small-paddingY: theme(spacing.xs2);
+
+  &::part(button) {
+    @apply border-none;
+  }
+}

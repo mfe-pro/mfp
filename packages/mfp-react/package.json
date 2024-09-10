@@ -1,0 +1,21 @@
+{
+  "name": "@mfp/react",
+  "version": "1.7.0",
+  "license": "Apache-2.0",
+  "description": "React specific wrapper for MFP Design System components",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@mfp/core": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "tslib": "^2.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfe-pro/MFP"
+  }
+}

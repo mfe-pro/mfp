@@ -1,0 +1,108 @@
+/* -------------------------------------------------------------------------- */
+/*                         Accordion custom properties                        */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-accordion--small-padding-y: Accordion small vertical padding
+   * @prop --mfp-accordion--small-padding-start: Accordion small start padding
+   * @prop --mfp-accordion--small-padding-end: Accordion small end padding
+   * @prop --mfp-accordion--small-padding-gap: Accordion small gap distance between suffix, title and prefix
+   * @prop --mfp-accordion--small-radius: Accordion small border radius
+   *
+   * @prop --mfp-accordion--medium-padding-y: Accordion medium vertical padding
+   * @prop --mfp-accordion--medium-padding-start: Accordion medium start padding
+   * @prop --mfp-accordion--medium-padding-end: Accordion medium end padding
+   * @prop --mfp-accordion--medium-padding-gap: Accordion medium gap distance between suffix, title and prefix
+   * @prop --mfp-accordion--medium-radius: Accordion medium border radius
+   *
+   * @prop --mfp-accordion--collapsed-border-color: Accordion collapsed border color
+   * @prop --mfp-accordion--collapsed-border-style: Accordion collapsed border style
+   * @prop --mfp-accordion--collapsed-border-width: Accordion collapsed border width
+   *
+   * @prop --mfp-accordion--expanded-border-color: Accordion expanded border color
+   * @prop --mfp-accordion--expanded-border-style: Accordion expanded border style
+   * @prop --mfp-accordion--expanded-border-width: Accordion expanded border width
+   *
+   * @prop --mfp-accordion--filled-collapsed-background: Accordion filled collapsed header background
+   * @prop --mfp-accordion--filled-collapsed-text-color: Accordion filled collapsed header text color
+   * @prop --mfp-accordion--filled-expanded-background: Accordion filled expanded header background
+   * @prop --mfp-accordion--filled-expanded-collapsed-hover: Accordion filled expanded header color on hover
+   * @prop --mfp-accordion--filled-expanded-text-color: Accordion filled expanded header text color
+   *
+   * @prop --mfp-accordion--ghost-collapsed-background: Accordion ghost collapsed header background
+   * @prop --mfp-accordion--ghost-collapsed-text-color: Accordion ghost collapsed header text color
+   * @prop --mfp-accordion--ghost-expanded-background: Accordion ghost expanded header background
+   * @prop --mfp-accordion--ghost-expanded-collapsed-hover: Accordion ghost expanded header color on hover
+   * @prop --mfp-accordion--ghost-expanded-text-color: Accordion ghost expanded header text color
+   *
+   * @prop --mfp-accordion--panel-filled-border-color: Accordion filled panel border color
+   * @prop --mfp-accordion--panel-filled-border-style: Accordion filled panel border style
+   * @prop --mfp-accordion--panel-filled-border-width: Accordion filled panel border width
+   * @prop --mfp-accordion--panel-small-filled-padding-y: Accordion small filled panel vertical padding
+   * @prop --mfp-accordion--panel-small-filled-padding-start: Accordion small filled panel start padding
+   * @prop --mfp-accordion--panel-small-filled-padding-end: Accordion small filled panel end padding
+   * @prop --mfp-accordion--panel-medium-filled-padding-y: Accordion medium filled panel vertical padding
+   * @prop --mfp-accordion--panel-medium-filled-padding-start: Accordion medium filled panel start padding
+   * @prop --mfp-accordion--panel-medium-filled-padding-end: Accordion medium filled panel end padding
+   *
+   * @prop --mfp-accordion--panel-ghost-border-color: Accordion ghost panel border color
+   * @prop --mfp-accordion--panel-ghost-border-style: Accordion ghost panel border style
+   * @prop --mfp-accordion--panel-ghost-border-width: Accordion ghost panel border width
+   * @prop --mfp-accordion--panel-small-ghost-padding-y: Accordion small ghost panel vertical padding
+   * @prop --mfp-accordion--panel-small-ghost-padding-start: Accordion small ghost panel start padding
+   * @prop --mfp-accordion--panel-small-ghost-padding-end: Accordion small ghost panel end padding
+   * @prop --mfp-accordion--panel-medium-ghost-padding-y: Accordion medium ghost panel vertical padding
+   * @prop --mfp-accordion--panel-medium-ghost-padding-start: Accordion medium ghost panel start padding
+   * @prop --mfp-accordion--panel-medium-ghost-padding-end: Accordion medium ghost panel end padding
+  */
+  --mfp-accordion--small-padding-y: theme(spacing.xs);
+  --mfp-accordion--small-padding-start: theme(spacing.s);
+  --mfp-accordion--small-padding-end: theme(spacing.s);
+  --mfp-accordion--small-gap: theme(spacing.xs);
+  --mfp-accordion--small-radius: theme(borderRadius.xs);
+
+  --mfp-accordion--medium-padding-y: theme(spacing.s);
+  --mfp-accordion--medium-padding-start: theme(spacing.m);
+  --mfp-accordion--medium-padding-end: theme(spacing.m);
+  --mfp-accordion--medium-gap: theme(spacing.m);
+  --mfp-accordion--medium-radius: theme(borderRadius.xs);
+
+  --mfp-accordion--collapsed-border-color: theme(colors.transparent);
+  --mfp-accordion--collapsed-border-style: none;
+  --mfp-accordion--collapsed-border-width: unset;
+
+  --mfp-accordion--expanded-border-color: theme(colors.transparent);
+  --mfp-accordion--expanded-border-style: none;
+  --mfp-accordion--expanded-border-width: unset;
+
+  --mfp-accordion--filled-collapsed-background: theme(colors.ui.secondary);
+  --mfp-accordion--filled-collapsed-text-color: theme(colors.text.primary);
+  --mfp-accordion--filled-expanded-background: theme(colors.ui.brand-alt);
+  --mfp-accordion--filled-expanded-text-color: theme(colors.text.primary);
+
+  --mfp-accordion--ghost-collapsed-background: theme(colors.transparent);
+  --mfp-accordion--ghost-collapsed-text-color: theme(colors.text.primary);
+  --mfp-accordion--ghost-expanded-background: theme(colors.transparent);
+  --mfp-accordion--ghost-expanded-text-color: theme(colors.text.brand);
+
+  --mfp-accordion--panel-filled-border-color: theme(colors.stroke.primary);
+  --mfp-accordion--panel-filled-border-style: solid;
+  --mfp-accordion--panel-filled-border-width: theme(borderWidth.s);
+  --mfp-accordion--panel-small-filled-padding-y: theme(spacing.s);
+  --mfp-accordion--panel-small-filled-padding-start: theme(spacing.s);
+  --mfp-accordion--panel-small-filled-padding-end: theme(spacing.s);
+  --mfp-accordion--panel-medium-filled-padding-y: theme(spacing.m);
+  --mfp-accordion--panel-medium-filled-padding-start: theme(spacing.m);
+  --mfp-accordion--panel-medium-filled-padding-end: theme(spacing.m);
+
+  --mfp-accordion--panel-ghost-border-color: theme(colors.transparent);
+  --mfp-accordion--panel-ghost-border-style: none;
+  --mfp-accordion--panel-ghost-border-width: unset;
+  --mfp-accordion--panel-small-ghost-padding-y: theme(spacing.s);
+  --mfp-accordion--panel-small-ghost-padding-start: theme(spacing.l);
+  --mfp-accordion--panel-small-ghost-padding-end: theme(spacing.l);
+  --mfp-accordion--panel-medium-ghost-padding-y: theme(spacing.m);
+  --mfp-accordion--panel-medium-ghost-padding-start: theme(spacing.xl);
+  --mfp-accordion--panel-medium-ghost-padding-end: theme(spacing.xl);
+}

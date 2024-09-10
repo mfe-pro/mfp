@@ -1,0 +1,16 @@
+/* -------------------------------------------------------------------------- */
+/*                          Switch custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-switch--height: Switch height
+   * @prop --mfp-switch--justify-content: Switch justify content
+   * @prop --mfp-switch--width: Switch width
+   * @prop --mfp-switch--dot-size: Switch dot size
+   */
+  --mfp-switch--height: 24px;
+  --mfp-switch--justify-content: 'start';
+  --mfp-switch--width: 44px;
+  --mfp-switch--dot-size: calc(var(--mfp-switch--height) - (theme(spacing.xs2) * 2));
+}

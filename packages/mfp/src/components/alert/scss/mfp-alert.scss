@@ -1,0 +1,84 @@
+/* -------------------------------------------------------------------------- */
+/*                        Alert styles                        */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-alert.variables';
+
+:host {
+  @apply block;
+}
+
+:host(.is-hidden) {
+  @apply hidden;
+}
+
+:host(.is-sticky) {
+  @apply fixed inset-0 z-[var(--mfp-alert--z-index)] is-full inset-bs-0;
+
+  .mfp-alert {
+    @apply items-center justify-center rounded-none;
+  }
+}
+
+.mfp-alert {
+  @apply relative flex transition-all min-is-[--mfp-alert--min-width] p-b-[--mfp-alert--padding] p-i-[--mfp-alert--padding];
+  @apply rounded-[var(--mfp-alert--border-radius)] border-[length:--mfp-alert--border-width];
+
+  border-style: var(--mfp-alert--border-style);
+}
+
+/**
+ * Set the alert background and border color based on the type value selected
+ */
+
+.mfp-alert__default {
+  @apply border-[color:--mfp-alert--border-default] bg-[color:--mfp-alert--background-default];
+}
+
+.mfp-alert__error {
+  @apply border-[color:--mfp-alert--border-error] bg-[color:--mfp-alert--background-error];
+}
+
+.mfp-alert__info {
+  @apply border-[color:--mfp-alert--border-info] bg-[color:--mfp-alert--background-info];
+}
+
+.mfp-alert__success {
+  @apply border-[color:--mfp-alert--border-success] bg-[color:--mfp-alert--background-success];
+}
+
+.mfp-alert__warning {
+  @apply border-[color:--mfp-alert--border-warning] bg-[color:--mfp-alert--background-warning];
+}
+
+/**
+ * Set the alert icon color based on the type value selected
+ */
+.mfp-alert__icon {
+  &--default {
+    @apply text-[color:--mfp-alert--icon-color-default];
+  }
+
+  &--error {
+    @apply text-[color:--mfp-alert--icon-color-error];
+  }
+
+  &--info {
+    @apply text-[color:--mfp-alert--icon-color-info];
+  }
+
+  &--success {
+    @apply text-[color:--mfp-alert--icon-color-success];
+  }
+
+  &--warning {
+    @apply text-[color:--mfp-alert--icon-color-warning];
+  }
+}
+
+/**
+ * Tweak the close mfp-button styles so it remain small without extra padding
+ */
+.mfp-alert__close::part(button) {
+  @apply rounded-s border-0 bs-fit p-b-0 p-i-0;
+}

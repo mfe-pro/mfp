@@ -1,0 +1,189 @@
+/* -------------------------------------------------------------------------- */
+/*                                Input styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-input.variables';
+
+:host {
+  @apply block is-full;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            Label and Helper text                           */
+/* -------------------------------------------------------------------------- */
+
+.mfp-input--label {
+  @apply flex flex-grow items-center m-be-[--mfp-input--label-margin-bottom];
+  @apply text-[length:--mfp-input--label-text-size] text-[color:--mfp-input--label-text-color];
+}
+
+.mfp-input--helper-text {
+  @apply text-[length:--mfp-input--helper-text-size] text-[color:--mfp-input--helper-text-color] m-bs-[--mfp-input--helper-margin-top];
+}
+
+.mfp-input--helper-text.validation-error {
+  @apply text-text-danger;
+}
+
+.mfp-input--helper-text.validation-success {
+  @apply text-text-success;
+}
+
+.mfp-input--helper-text.validation-warning {
+  @apply text-text-warning;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Input group control                            */
+/* -------------------------------------------------------------------------- */
+
+.mfp-input--control {
+  @apply flex items-center transition-[border-color,box-shadow] is-full;
+  // Border
+  @apply rounded-[--mfp-input--border-radius] border-[length:--mfp-input--border-width] border-[color:--mfp-input--border-color];
+  // Padding
+  @apply pe-[--mfp-input--padding-end] ps-[--mfp-input--padding-start] p-b-[--mfp-input--paddingY];
+  // Text
+  @apply text-[length:--mfp-input--text-size] text-[color:--mfp-input--text-color] placeholder:text-[color:--mfp-input--text-placeholder-color];
+  // Hover
+  @apply [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-brand;
+
+  border-style: var(--mfp-input--border-style);
+
+  // Focus
+  &:not(.disabled):focus-within {
+    --mfp-ring-width: 1px;
+    --mfp-ring-offset-width: 0;
+    --mfp-ring-color-focus: var(--mfp-input--border-color-focus);
+
+    @apply focus border-[color:--mfp-input--border-color-focus];
+  }
+
+  // Enable clear button whenever the input group control is hovered or has focus
+  &:not(.disabled):hover,
+  &:not(.disabled):focus-within {
+    .mfp-input--control__clear {
+      @apply inline-block;
+    }
+  }
+}
+
+.mfp-input--control.disabled {
+  @apply cursor-not-allowed opacity-60;
+}
+
+/* ------------------------------- Validation ------------------------------- */
+
+.mfp-input--control.validation-error {
+  @apply border-stroke-danger [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-danger;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.danger);
+
+    @apply border-active-stroke-danger;
+  }
+}
+
+.mfp-input--control.validation-success {
+  @apply border-stroke-success [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-success;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.success);
+
+    @apply border-active-stroke-success;
+  }
+}
+
+.mfp-input--control.validation-warning {
+  @apply border-stroke-warning [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-warning;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.warning);
+
+    @apply border-active-stroke-warning;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Native HTML Input                             */
+/* -------------------------------------------------------------------------- */
+
+.mfp-input--control__input {
+  @apply flex-auto cursor-[inherit] appearance-none bg-[inherit] font-[inherit] text-[length:inherit] text-[color:inherit];
+  @apply border-none min-bs-[--mfp-input--icon-size] min-is-0 p-b-0 p-i-0 m-b-0 m-i-0 focus:outline-none focus-visible:outline-none;
+
+  box-shadow: none;
+  font-weight: inherit;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Clear button                                */
+/* -------------------------------------------------------------------------- */
+
+.mfp-input--control__clear::part(button) {
+  // Since the clear button is inside the input group control,
+  // we need to reset the focus ring styles
+  --mfp-ring-width: initial;
+  --mfp-ring-offset-width: initial;
+  --mfp-ring-color-focus: initial;
+
+  @apply rounded-xs border-none bs-auto p-b-0 p-i-0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Prefix and suffix                             */
+/* -------------------------------------------------------------------------- */
+
+.mfp-input--control__prefix,
+.mfp-input--control__suffix {
+  @apply pointer-events-none flex items-center text-[color:--mfp-input--text-color];
+}
+
+.mfp-input--control__prefix {
+  @apply me-[--mfp-input--gap];
+}
+
+.mfp-input--control__suffix {
+  @apply ms-[--mfp-input--gap];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                         Slotted and internal icons                         */
+/* -------------------------------------------------------------------------- */
+
+mfp-icon,
+::slotted(mfp-icon) {
+  --mfp-icon--size: var(--mfp-input--icon-size) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Hide webkit clear button                          */
+/* -------------------------------------------------------------------------- */
+
+/* Remove clear controls from search input */
+
+.mfp-input--control__input::-moz-search-cancel {
+  @apply hidden appearance-none;
+}
+
+.mfp-input--control__input::-webkit-search-decoration,
+.mfp-input--control__input::-webkit-search-cancel-button,
+.mfp-input--control__input::-webkit-search-results-button,
+.mfp-input--control__input::-webkit-search-results-decoration {
+  @apply hidden appearance-none;
+}
+
+/* Remove native control extra padding from input date and datetime */
+
+.mfp-input--control__input::-webkit-datetime-edit-fields-wrapper,
+.mfp-input--control__input::-webkit-datetime-edit,
+.mfp-input--control__input::-webkit-datetime-edit-year-field,
+.mfp-input--control__input::-webkit-datetime-edit-month-field,
+.mfp-input--control__input::-webkit-datetime-edit-day-field,
+.mfp-input--control__input::-webkit-datetime-edit-hour-field,
+.mfp-input--control__input::-webkit-datetime-edit-minute-field,
+.mfp-input--control__input::-webkit-datetime-edit-second-field,
+.mfp-input--control__input::-webkit-datetime-edit-millisecond-field,
+.mfp-input--control__input::-webkit-datetime-edit-meridiem-field {
+  @apply p-b-0 p-i-0;
+}

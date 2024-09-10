@@ -1,0 +1,85 @@
+/* -------------------------------------------------------------------------- */
+/*                                Radio styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-radio.variables';
+
+:host {
+  @apply inline-block;
+}
+
+.mfp-radio {
+  @apply box-border inline-flex cursor-pointer items-center justify-center gap-2 transition-[background-color] duration-300;
+  @apply rounded-s p-b-xs p-i-xs;
+
+  &.is-disabled {
+    .mfp-radio__circle {
+      @apply opacity-60;
+    }
+
+    &.is-checked .mfp-radio__circle {
+      @apply border-stroke-brand;
+    }
+
+    &.is-checked .mfp-radio__checked {
+      @apply bg-icon-brand;
+    }
+  }
+
+  &.has-background:not(.is-disabled):hover {
+    @apply bg-hover-ui-primary;
+  }
+
+  &.is-checked:not(.is-disabled) {
+    .mfp-radio__circle {
+      @apply border-icon-brand;
+    }
+
+    .mfp-radio__checked {
+      @apply bg-ui-brand;
+    }
+  }
+
+  &:not(.is-disabled):hover .mfp-radio__circle {
+    @apply border-hover-ui-brand;
+  }
+
+  &.is-checked:not(.is-disabled):hover {
+    .mfp-radio__checked,
+    .mfp-radio__circle {
+      @apply border-hover-icon-brand;
+    }
+  }
+}
+
+.mfp-radio__input {
+  @apply pointer-events-none absolute opacity-0 p-b-0 p-i-0 m-b-0 m-i-0;
+
+  &:focus-visible {
+    ~ .mfp-radio__circle {
+      @apply focus;
+    }
+  }
+}
+
+.mfp-radio__control {
+  @apply box-border flex items-center justify-center rounded-full bs-[--mfp-radio--size] is-[--mfp-radio--size] p-b-[2px] p-i-[2px];
+}
+
+.mfp-radio__circle {
+  @apply relative box-border flex items-center justify-center rounded-full border-[length:--mfp-radio--border-width] border-solid border-hover-icon-primary bs-full is-full p-b-[3px] p-i-[3px];
+}
+
+.mfp-radio__checked {
+  @apply rounded-full bs-full is-full;
+}
+
+.mfp-radio__label {
+  @apply font-medium leading-regular text-text-primary;
+}
+
+.mfp-radio__circle,
+.mfp-radio__checked,
+.mfp-radio__label {
+  @apply transition-[color,background-color,border-color,box-shadow] duration-300;
+}

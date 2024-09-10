@@ -1,0 +1,37 @@
+/* -------------------------------------------------------------------------- */
+/*                                Option styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-option.variables';
+
+:host {
+  @apply block;
+}
+
+:host([hidden]) {
+  @apply hidden;
+}
+
+.mfp-option {
+  @apply flex cursor-pointer items-center text-[length:--mfp-option--font-size] is-full;
+  @apply pe-[--mfp-option--padding-end] ps-[--mfp-option--padding-start] p-b-[--mfp-option--paddingY] p-i-[--mfp-option--paddingY];
+  @apply rounded-[--mfp-option--border-radius] bg-[--mfp-option--background] shadow-[shadow:--mfp-option--box-shadow];
+  @apply border-[length:--mfp-option--border-width] border-[color:--mfp-option--border-color];
+  // Transition
+  @apply transition-colors duration-150 ease-in-out;
+  // Focus
+  @apply [&:not(.disabled)]:focus-visible:focus;
+  // Hover
+  @apply [&:not(.disabled)]:hover:bg-hover-ui-secondary;
+  // Active
+  @apply [&.active:not(.disabled)]:bg-ui-brand-alt [&.active:not(.disabled)]:text-text-brand;
+  // Disabled
+  @apply [&.disabled]:cursor-not-allowed [&.disabled]:opacity-60;
+
+  border-style: var(--mfp-option--border-style);
+}
+
+.mfp-option__label {
+  @apply inline-block flex-auto overflow-hidden text-ellipsis whitespace-nowrap;
+  @apply pe-[--mfp-option-label--padding-end] ps-[--mfp-option-label--padding-start];
+}

@@ -1,0 +1,37 @@
+/* -------------------------------------------------------------------------- */
+/*                          Panel custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+  * @prop --mfp-panel--background: Panel background color
+
+  * @prop --mfp-panel--border-color: Panel border color
+  * @prop --mfp-panel--border-radius: Panel border radius
+  * @prop --mfp-panel--border-style: Panel border style
+  * @prop --mfp-panel--border-width: Panel border width
+
+  * @prop --mfp-panel--box-shadow: Panel box shadow
+  * @prop --mfp-panel--padding: Panel padding
+
+  * @prop --mfp-panel--height: Panel height
+  * @prop --mfp-panel--width: Panel width
+  * @prop --mfp-panel-z-index: Panel z-index applied when opened
+  */
+
+  --mfp-panel--background: theme(colors.ui.primary);
+
+  --mfp-panel--border-color: theme(colors.transparent);
+  --mfp-panel--border-radius: theme(borderRadius.s);
+  --mfp-panel--border-style: none;
+  --mfp-panel--border-width: unset;
+
+  --mfp-panel--box-shadow: theme(boxShadow.m);
+  --mfp-panel--paddingY: theme(spacing.xs);
+  --mfp-panel--padding-start: theme(spacing.xs);
+  --mfp-panel--padding-end: theme(spacing.xs);
+
+  --mfp-panel--height: 50vh;
+  --mfp-panel--width: 320px;
+  --mfp-panel-z-index: 10;
+}

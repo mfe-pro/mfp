@@ -1,0 +1,17 @@
+/* -------------------------------------------------------------------------- */
+/*                   Progress custom properties                  */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+    * @prop --mfp-progress-bar--height: The progress bars height
+    * @prop --mfp-progress-bar--indeterminateWidth: The progress bar width when its indeterminate
+    * @prop --mfp-progress-bar--indicatorColor: The progress bar color (inside the track area)
+    * @prop --mfp-progress-bar--trackColor: The progress bar track area (the grey one)
+   */
+
+  --mfp-progress-bar--height: theme(height.1);
+  --mfp-progress-bar--indeterminateWidth: 25%;
+  --mfp-progress-bar--indicatorColor: theme(colors.ui.brand);
+  --mfp-progress-bar--trackColor: theme(colors.ui.secondary);
+}

@@ -1,0 +1,74 @@
+/* -------------------------------------------------------------------------- */
+/*                                Step item styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-step-item.variables';
+
+:host {
+  --mfp-icon--color: theme(colors.icon.primary);
+
+  @apply bg-bg-primary;
+}
+
+.mfp-step-item__prefix.dot,
+.mfp-step-item__prefix.icon {
+  ::slotted(mfp-icon) {
+    --mfp-icon--color: var(--mfp-step-item--prefix-color);
+  }
+
+  &.current {
+    ::slotted(mfp-icon) {
+      --mfp-icon--color: var(--mfp-step-item--prefix-color-current);
+    }
+  }
+
+  &.completed {
+    ::slotted(mfp-icon) {
+      --mfp-icon--color: var(--mfp-step-item--prefix-color-completed);
+    }
+  }
+
+  &.error {
+    ::slotted(mfp-icon) {
+      --mfp-icon--color: var(--mfp-step-item--prefix-color-error);
+    }
+  }
+
+  &.disabled {
+    ::slotted(mfp-icon) {
+      opacity: 0.6;
+    }
+  }
+}
+
+.mfp-step-item__prefix.numeric {
+  @apply flex items-center justify-center rounded-full;
+  @apply bg-[--mfp-step-item--prefix-num-bg-color] bs-[--mfp-step-item--prefix-num-size] is-[--mfp-step-item--prefix-num-size];
+  @apply text-m font-semibold leading-regular;
+
+  &.small {
+    @apply text-s [--mfp-step-item--prefix-num-size:--mfp-spacing-l];
+  }
+
+  // Status
+
+  &.current {
+    @apply bg-[var(--mfp-step-item--prefix-color-current)] text-[--mfp-text--alt];
+  }
+
+  &.completed {
+    @apply bg-ui-success-alt text-text-success;
+  }
+
+  &.error {
+    @apply bg-ui-danger-alt text-text-danger;
+  }
+
+  &.disabled {
+    @apply opacity-60;
+  }
+}
+
+.mfp-step-item__content--description::slotted(*) {
+  @apply text-s leading-regular opacity-60;
+}

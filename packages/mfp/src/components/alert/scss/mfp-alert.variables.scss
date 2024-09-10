@@ -1,0 +1,65 @@
+/* -------------------------------------------------------------------------- */
+/*                   Alert custom properties                  */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-alert--background: The alert background color
+   * @prop --mfp-alert--border-radius: The alert border radius
+   * @prop --mfp-alert--content-footer-gap: The alert content and footer gap
+   * @prop --mfp-alert--title-body-gap: The alert title and body gap
+
+   * @prop --mfp-alert--border-color: The alert border color
+   * @prop --mfp-alert--border-style: The alert border style
+   * @prop --mfp-alert--border-width: The alert border width
+
+   * @prop --mfp-alert--background-info: The alert background color for info type
+   * @prop --mfp-alert--background-success: The alert background color for success type
+   * @prop --mfp-alert--background-warning: The alert background color for warning type
+   * @prop --mfp-alert--background-error: The alert background color for error type
+
+   * @prop --mfp-alert--border-info: The alert border color for info type
+   * @prop --mfp-alert--border-success: The alert border color for success type
+   * @prop --mfp-alert--border-warning: The alert border color for warning type
+   * @prop --mfp-alert--border-error: The alert border color for error type
+
+   * @prop --mfp-alert--icon-color-info: The alert icon color for info type
+   * @prop --mfp-alert--icon-color-success: The alert icon color for success type
+   * @prop --mfp-alert--icon-color-warning: The alert icon color for warning type
+   * @prop --mfp-alert--icon-color-error: The alert icon color for error type
+
+   * @prop --mfp-alert--padding: The alert padding
+   * @prop --mfp-alert--min-width: The alert min width
+   */
+
+  --mfp-alert--background: theme(colors.ui.secondary);
+
+  --mfp-alert--border-radius: theme(borderRadius.s);
+
+  --mfp-alert--content-footer-gap: theme(spacing.s);
+  --mfp-alert--title-body-gap: theme(spacing.s);
+
+  --mfp-alert--background-info: theme(colors.ui.brand-alt);
+  --mfp-alert--background-success: theme(colors.ui.success-alt);
+  --mfp-alert--background-warning: theme(colors.ui.warning-alt);
+  --mfp-alert--background-error: theme(colors.ui.danger-alt);
+  --mfp-alert--background-default: theme(colors.ui.primary);
+
+  --mfp-alert--border-info: theme(colors.stroke.brand);
+  --mfp-alert--border-success: theme(colors.stroke.success);
+  --mfp-alert--border-warning: theme(colors.stroke.warning);
+  --mfp-alert--border-error: theme(colors.stroke.danger);
+  --mfp-alert--border-default: theme(colors.stroke.secondary);
+  --mfp-alert--border-width: theme(borderWidth.s);
+  --mfp-alert--border-style: solid;
+
+  --mfp-alert--icon-color-info: theme(colors.icon.brand);
+  --mfp-alert--icon-color-success: theme(colors.icon.success);
+  --mfp-alert--icon-color-warning: theme(colors.icon.warning);
+  --mfp-alert--icon-color-error: theme(colors.icon.danger);
+  --mfp-alert--icon-color-default: theme(colors.icon.primary);
+
+  --mfp-alert--padding: theme(padding.s);
+
+  --mfp-alert--min-width: 320px;
+}

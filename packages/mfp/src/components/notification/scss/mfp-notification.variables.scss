@@ -1,0 +1,43 @@
+/* -------------------------------------------------------------------------- */
+/*                          Notification custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-notification--background: The notification background color
+   * @prop --mfp-notification--box-shadow: The notification box shadow
+   * @prop --mfp-notification--border-color: The notification border color
+   * @prop --mfp-notification--border-radius: The notification border radius
+   * @prop --mfp-notification--border-style: The notification border style
+   * @prop --mfp-notification--border-width: The notification border width
+   * @prop --mfp-notification--content-footer-gap: The notification content and footer gap
+   * @prop --mfp-notification--title-body-gap: The notification title and body gap
+   * @prop --mfp-notification--icon-color-error: The notification icon color for error type
+   * @prop --mfp-notification--icon-color-info: The notification icon color for info type
+   * @prop --mfp-notification--icon-color-neutral: The notification icon color for neutral type
+   * @prop --mfp-notification--icon-color-success: The notification icon color for success type
+   * @prop --mfp-notification--icon-color-warning: The notification icon color for warning type
+   * @prop --mfp-notification--padding: The notification padding
+   * @prop --mfp-notification--min-width: The notification min width
+   */
+  --mfp-notification--background: theme(colors.ui.primary);
+  --mfp-notification--box-shadow: theme(boxShadow.l);
+
+  --mfp-notification--border-color: theme(colors.transparent);
+  --mfp-notification--border-radius: theme(borderRadius.s);
+  --mfp-notification--border-style: none;
+  --mfp-notification--border-width: unset;
+
+  --mfp-notification--content-footer-gap: theme(spacing.m);
+  --mfp-notification--title-body-gap: theme(spacing.s);
+
+  --mfp-notification--icon-color-error: theme(colors.icon.danger);
+  --mfp-notification--icon-color-info: theme(colors.icon.brand);
+  --mfp-notification--icon-color-neutral: theme(colors.icon.primary);
+  --mfp-notification--icon-color-success: theme(colors.icon.success);
+  --mfp-notification--icon-color-warning: theme(colors.icon.warning);
+
+  --mfp-notification--padding: theme(padding.m);
+
+  --mfp-notification--min-width: 320px;
+}

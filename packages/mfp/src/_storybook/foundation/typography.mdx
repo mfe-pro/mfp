@@ -1,0 +1,357 @@
+import { Meta, Source, Typeset } from '@storybook/blocks';
+
+<Meta title="Foundation/Typography" />
+
+export const theme = () => document.querySelector('body').getAttribute('mfp-theme');
+
+export const typography = {
+  weight: {
+    regular: '400',
+    semibold: '500',
+    bold: '700',
+  },
+  size: {
+    xs: 12,
+    s: 14,
+    m: 16,
+    l: 20,
+    xl: 24,
+    xxl: 32,
+    xxl2: 40,
+    xxl3: 48,
+    xxl4: 56,
+    xxl5: 64,
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+<div className="mfp-doc__wrapper">
+  <div className="mfp-doc__container" >
+    <h1>Tipografia</h1>
+
+    <p>
+      A tipografia é uma parte essencial de qualquer sistema de design, e é importante entender os diferentes tipos de tipografia e como usá-los de forma eficaz.
+      <ul>
+        <li>O <b className="font-bold">tema padrão do MFP usa a fonte Outfit</b>, uma tipografia versátil e moderna que atende a uma ampla gama de necessidades tipográficas, desde o texto do corpo até títulos de exibição.</li>
+      </ul>
+    </p>
+
+    <p>
+      <b className="font-bold">Fonte:</b>{' '}
+      <a className="mfp-link text-text-brand" href={`https://fonts.google.com/specimen/${theme() === 'mfp' ? 'Outfit' : 'Poppins'}`}>
+        {theme() === 'mfp' ? 'Outfit' : 'Poppins'}
+      </a>
+    </p>
+
+    <p>A fonte Outfit é cuidadosamente selecionada por sua excelente legibilidade, adaptabilidade e apelo estético, garantindo uma experiência de usuário coesa e visualmente agradável.</p>
+
+    <h2>Exibição</h2>
+
+    <p>
+      A tipografia de exibição é usada para manchetes, títulos e outros elementos de texto grandes que devem atrair a atenção do leitor.
+      Ela é frequentemente usada para anúncios especiais, promoções ou outras mensagens importantes que precisam se destacar do restante do conteúdo da página.
+      Para usar a fonte de exibição, adicione a classe `display` ao elemento (recomendado para um elemento HTML <code>h1</code>).
+    </p>
+
+    <Source dark format="dedent" language="html" code={`<h1 class="display text-text-primary">${SampleText}</h1>`} />
+
+    <div className="rounded-xs border-s border-solid border-stroke-success bg-ui-success-alt p-m">
+      <strong>💡 NOTA:</strong>
+      <p>
+        Além da classe `.display`, você também pode adicionar as classes `.semibold` ou `.bold` para alterar o peso da fonte do texto.
+        A classe `.semibold` é mais leve do que a classe `.bold`, mas ainda oferece uma diferença perceptível no peso.
+        **Ela se aplica a todos os títulos, não apenas ao título de exibição.**
+      </p>
+    </div>
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl5)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl5)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl5)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>H1</h2>
+
+    <p>
+      O título H1 é normalmente usado como o título principal de uma página ou seção, e deve ser visualmente distinto de outros títulos na página.
+      Geralmente, é o maior e mais proeminente título da página e é frequentemente usado para introduzir o tópico ou propósito principal da página.
+    </p>
+
+    <p>Para definir um título H1, você pode usar a tag HTML nativa <code>h1</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<h1>${SampleText}</h1>`} />
+    <p>ou a classe <code>.h1</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="h1">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl4)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl4)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl4)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>H2</h2>
+
+    <p>
+      O título H2 é frequentemente usado para introduzir um novo tópico ou seção e pode ser usado para dividir blocos longos de texto em seções mais gerenciáveis.
+      Ele deve ser visualmente distinto de outros títulos na página e é geralmente o segundo maior e mais proeminente título da página.
+    </p>
+
+    <p>Para definir um título H2, você pode usar a tag HTML nativa <code>h2</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<h2>${SampleText}</h2>`} />
+    <p>ou a classe <code>.h2</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="h2">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl3)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl3)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl3)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>H3</h2>
+
+    <p>
+      O título H3 é usado para introduzir subtópicos ou seções dentro de um tópico maior.
+      Ele deve ser visualmente distinto de outros títulos na página e é geralmente menor que o título H2.
+    </p>
+
+    <p>Para definir um título H3, você pode usar a tag HTML nativa <code>h3</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<h3>${SampleText}</h3>`} />
+    <p>ou a classe <code>.h3</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="h3">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl2)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl2)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl2)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>H4</h2>
+
+    <p>
+      O título H4 é usado para introduzir subtópicos ou seções dentro de um tópico maior.
+      Ele deve ser visualmente distinto de outros títulos na página e é geralmente menor que o título H3.
+    </p>
+
+    <p>Para definir um título H4, você pode usar a tag HTML nativa <code>h4</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<h4>${SampleText}</h4>`} />
+    <p>ou a classe <code>.h4</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="h4">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xxl)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>H5</h2>
+
+    <p>
+      O título H5 é usado para introduzir subtópicos ou seções dentro de um tópico maior.
+      Ele deve ser visualmente distinto de outros títulos na página e é geralmente menor que o título H4.
+    </p>
+
+    <p>Para definir um título H5, você pode usar a tag HTML nativa <code>h5</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<h5>${SampleText}</h5>`} />
+    <p>ou a classe <code>.h5</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="h5">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xl)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xl)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xl)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>H6</h2>
+
+    <p>
+      O título H6 é usado para introduzir subtópicos ou seções dentro de um tópico maior.
+      Ele deve ser visualmente distinto de outros títulos na página e é geralmente menor que o título H5.
+    </p>
+
+    <p>Para definir um título H6, você pode usar a tag HTML nativa <code>h6</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<h6>${SampleText}</h6>`} />
+    <p>ou a classe <code>.h6</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="h6">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.l)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.l)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.l)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+
+    <h2>Corpo</h2>
+
+    <p>O texto do corpo é usado para o conteúdo principal de uma página e deve ser visualmente distinto de outros títulos na página.</p>
+
+    <div className="rounded-xs border-s border-solid border-stroke-warning bg-ui-warning-alt p-m">
+      ❗️ O MFP define os estilos do corpo por padrão no CSS global, portanto **não é necessário adicionar nenhuma classe para usá-los**.
+    </div>
+
+    <Source dark format="dedent" language="html" code={`<p>${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.m)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+
+    <h2>Legenda</h2>
+
+    <p>
+      O elemento legenda é usado para fornecer uma breve descrição ou explicação sobre uma imagem ou outro elemento visual.
+      Ele é tipicamente usado em conjunto com o elemento figure, que contém o elemento visual descrito.
+    </p>
+
+    <p>Para definir uma legenda, você pode usar a tag HTML nativa <code>figcaption</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<figcaption>${SampleText}</figcaption>`} />
+    <p>ou a classe <code>.caption</code>:</p>
+    <Source dark format="dedent" language="html" code={`<p class="caption">${SampleText}</p>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.s)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.s)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.s)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+
+    <h2>Sobrescrito</h2>
+
+    <p>Para definir um sobrescrito, você pode usar a classe CSS <code>.overline</code>:</p>
+
+    <Source dark format="dedent" language="html" code={`<span class="overline">${SampleText}</span>`} />
+
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xs)]}
+      fontWeight={typography.weight.normal}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xs)]}
+      fontWeight={typography.weight.semibold}
+      sampleText={SampleText}
+    />
+    <Typeset
+      fontFamily={theme() === 'mfp' ? '"Outfit", sans-serif' : '"Poppins", sans-serif'}
+      fontSizes={[Number(typography.size.xs)]}
+      fontWeight={typography.weight.bold}
+      sampleText={SampleText}
+    />
+  </div>
+</div>

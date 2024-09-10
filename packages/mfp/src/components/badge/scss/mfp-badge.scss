@@ -1,0 +1,31 @@
+/* -------------------------------------------------------------------------- */
+/*                                Badge styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-badge.variables';
+
+:host {
+  @apply inline-block;
+}
+
+.mfp-badge {
+  @apply flex items-center justify-center bg-[color:--mfp-badge--background-color] text-[color:--mfp-badge--text-color];
+  @apply rounded-[--mfp-badge--border-radius] border-[length:--mfp-badge--border-width] border-[color:--mfp-badge--border-color];
+
+  border-style: var(--mfp-badge--border-style);
+  box-shadow: var(--mfp-badge--box-shadow);
+}
+
+.size {
+  &--small {
+    @apply bs-[--mfp-badge--size-small] is-[--mfp-badge--size-small];
+  }
+
+  &--medium {
+    @apply bs-[--mfp-badge--size-medium] is-[--mfp-badge--size-medium];
+  }
+}
+
+.digit {
+  @apply min-bs-[--mfp-badge--size-large] min-is-[--mfp-badge--size-large];
+}

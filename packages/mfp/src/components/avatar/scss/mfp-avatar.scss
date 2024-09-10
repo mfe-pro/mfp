@@ -1,0 +1,34 @@
+/* -------------------------------------------------------------------------- */
+/*                                Avatar styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-avatar.variables';
+
+:host {
+  @apply relative inline-block;
+}
+
+.mfp-avatar {
+  @apply relative overflow-hidden bg-[var(--mfp-avatar-background)];
+  @apply border-[length:var(--mfp-avatar--border-width)] border-[color:var(--mfp-avatar--border-color)];
+
+  border-style: var(--mfp-avatar--border-style);
+}
+
+.size {
+  &--xsmall {
+    @apply text-[length:var(--mfp-avatar--font-size-xsmall)] bs-[--mfp-avatar--size-xsmall] is-[--mfp-avatar--size-xsmall];
+  }
+
+  &--small {
+    @apply text-[length:var(--mfp-avatar--font-size-small)] bs-[--mfp-avatar--size-small] is-[--mfp-avatar--size-small];
+  }
+
+  &--medium {
+    @apply text-[length:var(--mfp-avatar--font-size-medium)] bs-[--mfp-avatar--size-medium] is-[--mfp-avatar--size-medium];
+  }
+
+  &--large {
+    @apply text-[length:var(--mfp-avatar--font-size-large)] bs-[--mfp-avatar--size-large] is-[--mfp-avatar--size-large];
+  }
+}

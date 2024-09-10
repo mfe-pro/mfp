@@ -1,0 +1,65 @@
+/* -------------------------------------------------------------------------- */
+/*                             Notification styles                            */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-notification.variables';
+
+:host {
+  @apply block;
+}
+
+:host(.is-hidden) {
+  @apply hidden;
+}
+
+.mfp-notification {
+  @apply relative flex transition-all min-is-[--mfp-notification--min-width] p-b-[--mfp-notification--padding] p-i-[--mfp-notification--padding];
+  @apply rounded-[--mfp-notification--border-radius] bg-[--mfp-notification--background] shadow-[shadow:--mfp-notification--box-shadow];
+}
+
+/**
+ * Set the notification icon color based on the type value selected
+ */
+.notification--icon.color {
+  &-error {
+    @apply text-[color:--mfp-notification--icon-color-error];
+  }
+
+  &-info {
+    @apply text-[color:--mfp-notification--icon-color-info];
+  }
+
+  &-neutral {
+    @apply text-[color:--mfp-notification--icon-color-neutral];
+  }
+
+  &-success {
+    @apply text-[color:--mfp-notification--icon-color-success];
+  }
+
+  &-warning {
+    @apply text-[color:--mfp-notification--icon-color-warning];
+  }
+}
+
+/**
+ * Tweak the close mfp-button styles so it remain small without extra padding
+ */
+.notification--close::part(button) {
+  @apply rounded-s border-0 bs-fit p-b-0 p-i-0;
+}
+
+/**
+ * Here we guarantee that if the footer actions are wrapped in a div container from the consumer side,
+ * the styles get applied to the that wrapping container directly
+ */
+[part='footer'] ::slotted(*) {
+  @apply flex items-start gap-xs;
+}
+
+[part='body'],
+[part='footer'] {
+  ::slotted(*) {
+    @apply block m-bs-m;
+  }
+}

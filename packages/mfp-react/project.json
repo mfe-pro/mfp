@@ -1,0 +1,44 @@
+{
+  "name": "mfp-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mfp-react/src",
+  "projectType": "library",
+  "tags": ["wrapper", "react", "publishable"],
+  "implicitDependencies": ["mfp"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "clean": true,
+        "main": "packages/mfp-react/src/index.ts",
+        "assets": ["packages/mfp-react/README.md"],
+        "outputPath": "dist/mfp-react",
+        "project": "packages/mfp-react/package.json",
+        "tsConfig": "packages/mfp-react/tsconfig.lib.json"
+      },
+      "dependsOn": [{ "dependencies": true, "target": "build" }]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/package.json", "{projectRoot}/project.json"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/mfp-react",
+        "tag": "latest"
+      }
+    },
+    "publish-beta": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/mfp-react",
+        "tag": "beta"
+      }
+    }
+  }
+}

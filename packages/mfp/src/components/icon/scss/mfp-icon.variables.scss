@@ -1,0 +1,12 @@
+/* -------------------------------------------------------------------------- */
+/*                           Icon custom propoerties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-icon--color: Icon color
+   * @prop --mfp-icon--size: Icon size
+   */
+  --mfp-icon--color: inherit;
+  --mfp-icon--size: 24px;
+}

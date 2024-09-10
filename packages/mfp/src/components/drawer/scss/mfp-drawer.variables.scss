@@ -1,0 +1,21 @@
+/* -------------------------------------------------------------------------- */
+/*                   Drawer custom properties                  */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-drawer--backgroundBackdrop - Background color of the backdrop
+   * @prop --mfp-drawer--gap - Gap between the drawer and the viewport
+   * @prop --mfp-drawer--width - Width of the drawer
+   * @prop --mfp-drawer--paddingX - Padding left and right of the drawer
+   * @prop --mfp-drawer--paddingY - Padding top and bottom of the drawer
+   * @prop --mfp-drawer--zIndex - Z-index of the drawer component
+   */
+
+  --mfp-drawer--backgroundBackdrop: theme(colors.grey.900);
+  --mfp-drawer--gap: theme(spacing.l);
+  --mfp-drawer--width: 320px;
+  --mfp-drawer--paddingX: theme(spacing.l);
+  --mfp-drawer--paddingY: theme(spacing.m);
+  --mfp-drawer--zIndex: 9999;
+}

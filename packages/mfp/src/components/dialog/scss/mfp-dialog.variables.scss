@@ -1,0 +1,44 @@
+/* -------------------------------------------------------------------------- */
+/*                          Dialog custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host,
+::backdrop {
+  /**
+   * @prop --mfp-dialog--background: Dialog background color
+   * @prop --mfp-dialog--background-backdrop: Dialog backdrop background color
+   * @prop --mfp-dialog--box-shadow: Dialog box shadow
+   * @prop --mfp-dialog--border-color: Dialog border color
+   * @prop --mfp-dialog--border-style: Dialog border style
+   * @prop --mfp-dialog--border-width: Dialog border width
+   * @prop --mfp-dialog--border-radius: Dialog border radius
+   * @prop --mfp-dialog--padding: Dialog padding
+   * @prop --mfp-dialog--content-footer-gap: Dialog gap distance between content and footer elements
+   * @prop --mfp-dialog--title-body-gap: Dialog gap distance between title and body elements
+   * @prop --mfp-dialog--width-small: Dialog small width
+   * @prop --mfp-dialog--width-medium: Dialog medium width
+   * @prop --mfp-dialog--width-large: Dialog large width
+   * @prop --mfp-dialog-z-index: Dialog z-index applied when opened
+   */
+
+  --mfp-dialog--background: theme(colors.ui.primary);
+  --mfp-dialog--background-backdrop: theme(colors.grey.900);
+  --mfp-dialog--text-color: theme(colors.text.primary);
+
+  --mfp-dialog--box-shadow: theme(boxShadow.l);
+
+  --mfp-dialog--border-color: theme(colors.transparent);
+  --mfp-dialog--border-radius: theme(borderRadius.m);
+  --mfp-dialog--border-style: none;
+  --mfp-dialog--border-width: unset;
+
+  --mfp-dialog--padding: theme(spacing.l);
+  --mfp-dialog--content-footer-gap: theme(spacing.l);
+  --mfp-dialog--title-body-gap: theme(spacing.s);
+
+  --mfp-dialog--width-small: 320px;
+  --mfp-dialog--width-medium: 480px;
+  --mfp-dialog--width-large: 640px;
+
+  --mfp-dialog-z-index: 10;
+}

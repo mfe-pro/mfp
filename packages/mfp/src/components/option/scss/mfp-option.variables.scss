@@ -1,0 +1,39 @@
+/* -------------------------------------------------------------------------- */
+/*                          Option custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+  * @prop --mfp-option--background: background color
+  * @prop --mfp-option--font-size: font size
+
+  * @prop --mfp-option--border-color: border color
+  * @prop --mfp-option--border-style: border style
+  * @prop --mfp-option--border-width: border width
+  * @prop --mfp-option--border-radius: border radius
+
+  * @prop --mfp-option--box-shadow: box shadow
+
+  * @prop --mfp-option--gap-start: gap space between prefix and label
+  * @prop --mfp-option--gap-end: gap space between label and suffix
+  * @prop --mfp-option--paddingY: padding Y axis
+  * @prop --mfp-option--padding-start: option label padding start
+  * @prop --mfp-option--padding-end: option label padding end
+  */
+
+  --mfp-option--background: theme(colors.ui.primary);
+  --mfp-option--font-size: theme(fontSize.m);
+
+  --mfp-option--border-color: theme(colors.transparent);
+  --mfp-option--border-style: none;
+  --mfp-option--border-width: theme(borderWidth.0);
+  --mfp-option--border-radius: theme(borderRadius.s);
+
+  --mfp-option--box-shadow: none;
+
+  --mfp-option--gap-start: theme(spacing.s);
+  --mfp-option--gap-end: theme(spacing.s);
+  --mfp-option--paddingY: theme(spacing.xs);
+  --mfp-option--padding-start: theme(spacing.s);
+  --mfp-option--padding-end: theme(spacing.s);
+}

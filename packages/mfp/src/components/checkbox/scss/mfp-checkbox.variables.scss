@@ -1,0 +1,14 @@
+/* -------------------------------------------------------------------------- */
+/*                          Checkbox custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-checkbox--size: Checkbox size
+   * @prop --mfp-checkbox--border-radius: Checkbox border radius
+   * @prop --mfp-checkbox--border-width: Checkbox border width
+   */
+  --mfp-checkbox--size: 24px;
+  --mfp-checkbox--border-radius: theme(borderRadius.xs);
+  --mfp-checkbox--border-width: theme(borderWidth.m);
+}
