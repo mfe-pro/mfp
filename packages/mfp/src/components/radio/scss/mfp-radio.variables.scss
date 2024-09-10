@@ -1,0 +1,12 @@
+/* -------------------------------------------------------------------------- */
+/*                          Radio custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-radio--size: Radio size
+   * @prop --mfp-radio--border-width: Radio border width
+   */
+  --mfp-radio--size: 24px;
+  --mfp-radio--border-width: theme(borderWidth.s);
+}

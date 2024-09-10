@@ -1,0 +1,17 @@
+/* -------------------------------------------------------------------------- */
+/*                        Drawer styles                        */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-drawer.variables';
+
+:host {
+  @apply invisible #{!important};
+}
+
+:host(.mfp-drawer--open) {
+  @apply visible #{!important};
+}
+
+.mfp-drawer {
+  @apply fixed z-10 flex flex-col gap-[--mfp-drawer--gap] bg-bg-primary shadow-m is-[--mfp-drawer--width] max-is-full p-b-[--mfp-drawer--paddingY] p-i-[--mfp-drawer--paddingX] inset-b-0;
+}

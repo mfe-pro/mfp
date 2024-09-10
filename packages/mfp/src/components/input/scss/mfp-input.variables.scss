@@ -1,0 +1,55 @@
+/* -------------------------------------------------------------------------- */
+/*                          Input custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-input--background-color - Input background color
+   * @prop --mfp-input--border-color - Input border color
+   * @prop --mfp-input--border-color-focus - Input border color on focus
+   * @prop --mfp-input--border-radius - Input border radius
+   * @prop --mfp-input--border-width - Input border width
+   * @prop --mfp-input--border-style - Input border style
+   * @prop --mfp-input--gap - Gap between input content and prefix/suffix
+   * @prop --mfp-input--helper-margin-top - Helper text margin top
+   * @prop --mfp-input--helper-text-color - Helper text color
+   * @prop --mfp-input--helper-text-size - Helper text size
+   * @prop --mfp-input--icon-size - Icon size to use in prefix/suffix and clear button
+   * @prop --mfp-input--label-margin-bottom - Input label margin bottom
+   * @prop --mfp-input--label-text-color - Input label text color
+   * @prop --mfp-input--label-text-size - Input label text size
+   * @prop --mfp-input--padding-start - Input padding start
+   * @prop --mfp-input--padding-end - Input padding end
+   * @prop --mfp-input--paddingY - Input padding top and bottom
+   * @prop --mfp-input--text-color - Input text color
+   * @prop --mfp-input--text-size - Input text size
+   * @prop --mfp-input--text-placeholder-color - Input placeholder text color
+   */
+  --mfp-input--background-color: theme(colors.ui.primary);
+
+  --mfp-input--border-color: theme(colors.stroke.tertiary);
+  --mfp-input--border-color-focus: theme(colors.stroke.brand);
+  --mfp-input--border-radius: theme(borderRadius.s);
+  --mfp-input--border-width: theme(borderWidth.s);
+  --mfp-input--border-style: solid;
+
+  --mfp-input--gap: theme(spacing.xs);
+
+  --mfp-input--helper-margin-top: theme(spacing.xs);
+  --mfp-input--helper-text-size: theme(fontSize.s);
+  --mfp-input--helper-text-color: theme(colors.text.primary);
+
+  --mfp-input--icon-size: 24px;
+
+  --mfp-input--label-margin-bottom: theme(spacing.xs);
+  --mfp-input--label-text-size: theme(fontSize.s);
+  --mfp-input--label-text-color: theme(colors.text.primary);
+
+  --mfp-input--padding-start: theme(spacing.m);
+  --mfp-input--padding-end: theme(spacing.m);
+  --mfp-input--paddingY: theme(spacing.s);
+
+  --mfp-input--text-color: theme(colors.text.primary);
+  --mfp-input--text-size: theme(fontSize.m);
+  --mfp-input--text-placeholder-color: theme(colors.text.secondary);
+}

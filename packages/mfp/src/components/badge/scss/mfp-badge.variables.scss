@@ -1,0 +1,31 @@
+/* -------------------------------------------------------------------------- */
+/*                          Badge custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-badge--background-color: Badge background color
+   * @prop --mfp-badge--box-shadow: Badge box shadow
+   * @prop --mfp-badge--border-color: Badge border color
+   * @prop --mfp-badge--border-radius: Badge border radius
+   * @prop --mfp-badge--border-style: Badge border style
+   * @prop --mfp-badge--border-width: Badge border width
+   * @prop --mfp-badge--size-small: Badge small size
+   * @prop --mfp-badge--size-medium: Badge medium size
+   * @prop --mfp-badge--size-large: Badge large size
+   * @prop --mfp-badge--text-color: Badge text color
+   */
+  --mfp-badge--background-color: theme(colors.ui.danger);
+  --mfp-badge--box-shadow: none;
+
+  --mfp-badge--border-color: theme(colors.stroke.tertiary);
+  --mfp-badge--border-radius: theme(borderRadius.full);
+  --mfp-badge--border-style: none;
+  --mfp-badge--border-width: theme(borderWidth.0);
+
+  --mfp-badge--size-small: 8px;
+  --mfp-badge--size-medium: 12px;
+  --mfp-badge--size-large: 16px;
+
+  --mfp-badge--text-color: theme(colors.text.inverse);
+}

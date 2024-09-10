@@ -1,0 +1,19 @@
+/* -------------------------------------------------------------------------- */
+/*                                Panel styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-panel.variables';
+
+:host {
+  @apply block;
+}
+
+.mfp-panel {
+  @include animation-fade-in;
+  @apply fixed z-[--mfp-panel-z-index] overflow-y-auto overflow-x-hidden is-[--mfp-panel--width] max-bs-[--mfp-panel--height];
+  @apply rounded-[--mfp-panel--border-radius] bg-[--mfp-panel--background] shadow-[shadow:--mfp-panel--box-shadow];
+  @apply pe-[--mfp-panel--padding-end] ps-[--mfp-panel--padding-start] p-b-[--mfp-panel--paddingY];
+  @apply border-[length:--mfp-panel--border-width] border-[color:--mfp-panel--border-color];
+
+  border-style: var(--mfp-panel--border-style);
+}

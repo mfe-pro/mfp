@@ -1,0 +1,56 @@
+/* -------------------------------------------------------------------------- */
+/*                          Select custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-select--background-color - Select background color
+   * @prop --mfp-select--border-color - Select border color
+   * @prop --mfp-select--border-color-focus - Select border color on focus
+   * @prop --mfp-select--border-color-disabled - Select border color when disabled
+   * @prop --mfp-select--border-radius - Select border radius
+   * @prop --mfp-select--border-width - Select border width
+   * @prop --mfp-select--border-style - Select border style
+   * @prop --mfp-select--gap - Gap between Select content and prefix/suffix
+   * @prop --mfp-select--helper-margin-top - Helper text margin top
+   * @prop --mfp-select--helper-text-color - Helper text color
+   * @prop --mfp-select--helper-text-size - Helper text size
+   * @prop --mfp-select--icon-size - Icon size to use in prefix/suffix and clear button
+   * @prop --mfp-select--label-margin-bottom - Select label margin bottom
+   * @prop --mfp-select--label-text-color - Select label text color
+   * @prop --mfp-select--label-text-size - Select label text size
+   * @prop --mfp-select--padding-start - Select padding start
+   * @prop --mfp-select--padding-end - Select padding end
+   * @prop --mfp-select--paddingY - Select padding top and bottom
+   * @prop --mfp-select--text-color - Select text color
+   * @prop --mfp-select--text-size - Select text size
+   * @prop --mfp-select--text-placeholder-color - Select placeholder text color
+   */
+  --mfp-select--background-color: theme(colors.ui.primary);
+
+  --mfp-select--border-color: theme(colors.stroke.tertiary);
+  --mfp-select--border-color-focus: theme(colors.stroke.brand);
+  --mfp-select--border-radius: theme(borderRadius.s);
+  --mfp-select--border-width: theme(borderWidth.s);
+  --mfp-select--border-style: solid;
+
+  --mfp-select--gap: theme(spacing.xs);
+
+  --mfp-select--helper-margin-top: theme(spacing.xs);
+  --mfp-select--helper-text-size: theme(fontSize.s);
+  --mfp-select--helper-text-color: theme(colors.text.primary);
+
+  --mfp-select--icon-size: 24px;
+
+  --mfp-select--label-margin-bottom: theme(spacing.xs);
+  --mfp-select--label-text-size: theme(fontSize.s);
+  --mfp-select--label-text-color: theme(colors.text.primary);
+
+  --mfp-select--padding-start: calc(var(--mfp-spacing-m) - var(--mfp-select--border-width));
+  --mfp-select--padding-end: calc(var(--mfp-spacing-m) - var(--mfp-select--border-width));
+  --mfp-select--paddingY: calc(var(--mfp-spacing-s) - var(--mfp-select--border-width));
+
+  --mfp-select--text-color: theme(colors.text.primary);
+  --mfp-select--text-size: theme(fontSize.m);
+  --mfp-select--text-placeholder-color: theme(colors.text.secondary);
+}

@@ -1,0 +1,38 @@
+/* -------------------------------------------------------------------------- */
+/*                                Button styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-divider.variables';
+
+:host {
+  @apply block is-full;
+}
+
+:host([orientation='vertical']) {
+  @apply flex bs-full;
+}
+
+.mfp-divider {
+  @apply flex items-center gap-[var(--mfp-divider--title-marginX)];
+}
+
+.mfp-divider--stroke {
+  @apply flex-grow stroke-[color:var(--mfp-divider--stroke-color)] bs-[var(--mfp-divider--stroke-thickness)] is-full;
+
+  &.end {
+    @apply rotate-180;
+  }
+}
+
+.mfp-divider--title__start .mfp-divider--stroke.start,
+.mfp-divider--title__end .mfp-divider--stroke.end {
+  @apply flex-grow-0 basis-[var(--mfp-divider--stroke-basis)];
+}
+
+.mfp-divider--vertical {
+  @apply flex-col items-center gap-[var(--mfp-divider--title-marginX)] is-full;
+
+  .mfp-divider--stroke {
+    @apply bs-full is-[var(--mfp-divider--stroke-thickness)];
+  }
+}

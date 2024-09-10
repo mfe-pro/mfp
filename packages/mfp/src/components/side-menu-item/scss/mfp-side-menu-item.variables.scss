@@ -1,0 +1,29 @@
+/* -------------------------------------------------------------------------- */
+/*                          Side menu item custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-side-menu-item--bg-default: Side menu item default background color
+   * @prop --mfp-side-menu-item--bg-hover: Side menu item hover background color
+   * @prop --mfp-side-menu-item--bg-active: Side menu item active background color
+   *
+   * @prop --mfp-side-menu-item--text-default: Side menu item default text color
+   * @prop --mfp-side-menu-item--text-hover: Side menu item hover text color
+   * @prop --mfp-side-menu-item--text-active: Side menu item active text color
+   * @prop --mfp-side-menu-item--text-disabled: Side menu item disable text color
+   *
+   * @prop --mfp-side-menu-item--paddingX: Side menu item vertical padding
+   * @prop --mfp-side-menu-item--paddingY: Side menu item horizontal padding
+   */
+  --mfp-side-menu-item--bg-default: theme(backgroundColor.transparent);
+  --mfp-side-menu-item--bg-hover: color-mix(in srgb, var(--mfp-ui--alt), var(--mfp-hover) 20%);
+  --mfp-side-menu-item--bg-active: theme(backgroundColor.ui.brand-alt);
+
+  --mfp-side-menu-item--text-default: theme(textColor.text.primary);
+  --mfp-side-menu-item--text-hover: theme(textColor.text.primary);
+  --mfp-side-menu-item--text-active: theme(textColor.text.brand);
+
+  --mfp-side-menu-item--paddingX: theme(space.l);
+  --mfp-side-menu-item--paddingY: theme(space.m);
+}

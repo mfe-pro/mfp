@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------------------- */
+/*                               Tooltip styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-tooltip.variables';
+
+.mfp-tooltip--panel {
+  @include animation-fade-in;
+  @apply pointer-events-none fixed z-[--mfp-tooltip--z-index] box-border bg-[--mfp-tooltip--background-color];
+  @apply is-[--mfp-tooltip--width] max-is-[--mfp-tooltip--max-width] p-b-[--mfp-tooltip--paddingY] p-i-[--mfp-tooltip--paddingX];
+  @apply text-[length:--mfp-tooltip--font-size] leading-[--mfp-tooltip--line-height] text-[color:--mfp-tooltip--text-color];
+  @apply rounded-[--mfp-tooltip--border-radius] border-[length:--mfp-tooltip--border-width] border-[color:--mfp-tooltip--border-color];
+  @apply shadow-[shadow:--mfp-tooltip--box-shadow];
+}
+
+.mfp-tooltip--arrow {
+  &,
+  &::before {
+    @apply absolute -z-[1] bs-2 is-2;
+  }
+
+  &::before {
+    @apply start-0 rotate-45 bg-[--mfp-tooltip--background-color] content-empty inset-bs-0;
+  }
+}

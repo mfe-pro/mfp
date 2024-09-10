@@ -1,0 +1,49 @@
+/* -------------------------------------------------------------------------- */
+/*                                Tab styles                               */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  @apply block;
+}
+
+.mfp-tab-group {
+  @apply relative;
+
+  &::after {
+    @apply absolute flex border-0 border-solid border-bg-tertiary content-empty;
+  }
+
+  &--horizontal-start,
+  &--horizontal-end {
+    &::after {
+      @apply is-full inset-be-0 [border-block-end-width:--mfp-stroke-s];
+    }
+  }
+
+  &--horizontal-start {
+    @apply justify-start;
+  }
+
+  &--horizontal-end {
+    @apply justify-end;
+  }
+
+  &--vertical-start::after {
+    @apply end-0 bs-full is-0 [border-block-end-width:0px] [border-inline-end-width:--mfp-stroke-s];
+  }
+
+  &--vertical-end::after {
+    @apply start-0 bs-full is-0 [border-block-end-width:0px] [border-inline-start-width:--mfp-stroke-s];
+  }
+}
+
+.mfp-tab-group.no-divider {
+  &::after {
+    @apply content-none;
+  }
+}
+
+.mfp-tab-group--container {
+  @include hide-scrollbar;
+  @apply gap-xs2 p-xs2; // This will avoid cutting the outline focus style
+}

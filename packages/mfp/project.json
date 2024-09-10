@@ -1,0 +1,201 @@
+{
+  "name": "mfp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mfp/src",
+  "projectType": "library",
+  "tags": ["components", "core", "publishable"],
+  "implicitDependencies": ["mfp-tailwindcss"],
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "namedInputs": {
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.mdx",
+      "!{projectRoot}/**/*.e2e.ts",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.stories.tsx",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.ts",
+      "!{projectRoot}/.eslintrc.json"
+    ]
+  },
+  "targets": {
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run mfp:stencil-start --noOpen",
+          "nx run mfp:storybook-start-css",
+          "nx run mfp:storybook-start"
+        ],
+        "parallel": true
+      }
+    },
+    "stencil-start": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/mfp/tsconfig.lib.json",
+        "configPath": "packages/mfp/stencil.config.ts",
+        "outputPath": "dist/mfp",
+        "watch": true,
+        "docsReadme": true,
+        "docs": true,
+        "dev": true
+      }
+    },
+    "storybook-start": {
+      "executor": "@nx/storybook:storybook",
+      "dependsOn": [{ "target": "prepare-storybook" }],
+      "options": {
+        "loglevel": "silly",
+        "configDir": "packages/mfp/.storybook",
+        "host": "127.0.0.1",
+        "port": 9001,
+        "open": true
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build": {
+      "dependsOn": [{ "target": "icons" }, { "target": "build", "projects": "mfp-tailwindcss" }],
+      "executor": "@nxext/stencil:build",
+      "outputs": [
+        "{options.outputPath}",
+        "{projectRoot}/custom-elements.json",
+        "{workspaceRoot}/packages/mfp-react/src/react-component-lib"
+      ],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/mfp/tsconfig.lib.json",
+        "configPath": "packages/mfp/stencil.config.ts",
+        "outputPath": "dist/mfp",
+        "ci": true
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "storybook-build": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}", "{options.config.configDir}"],
+      "options": {
+        "outputDir": "dist/storybook/mfp",
+        "configDir": "packages/mfp/.storybook",
+        "statsJson": true,
+        "ci": true
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "storybook-start-css": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/.storybook/assets/css"],
+      "options": {
+        "command": "npx tailwindcss -i packages/mfp/src/global/styles/default.scss -o packages/mfp/.storybook/assets/css/stories.css --postcss ./postcss.config.js --watch"
+      }
+    },
+    "storybook-build-css": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/.storybook/assets/css"],
+      "options": {
+        "command": "npx tailwindcss -i packages/mfp/src/global/styles/default.scss -o packages/mfp/.storybook/assets/css/stories.css --postcss ./postcss.config.js --minify"
+      }
+    },
+    "icons": {
+      "executor": "@mfp/tools:icons",
+      "outputs": ["{options.downloadPath}", "{options.extractToPath}"],
+      "options": {
+        "assetsFolder": "assets",
+        "downloadPath": "tmp",
+        "extractToPath": "packages/mfp/src/components/icon/svg",
+        "fileName": "main.zip",
+        "svgFolder": "core-main",
+        "sourceUrl": "https://github.com/phosphor-icons/core/archive/refs/heads"
+      }
+    },
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/mfp/tsconfig.lib.json",
+        "configPath": "packages/mfp/stencil.config.ts",
+        "outputPath": "dist/mfp",
+        "runInBand": true
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/mfp/tsconfig.lib.json",
+        "configPath": "packages/mfp/stencil.config.ts",
+        "outputPath": "dist/mfp",
+        "runInBand": true,
+        "maxWorkers": 1,
+        "noBuild": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "dependsOn": [{ "target": "stylelint" }],
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.{ts,tsx}", "{projectRoot}/package.json", "{projectRoot}/project.json"]
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "dependsOn": [{ "target": "build", "projects": "mfp-tailwindcss" }],
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.css", "{projectRoot}/**/*.scss"],
+        "configFile": "packages/mfp/.stylelintrc.json"
+      }
+    },
+    "prepare-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cp CHANGELOG.md {projectRoot}/src/_storybook"
+      }
+    },
+    "prepublish": {
+      "executor": "nx:run-commands",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "command": "mv dist/mfp/dist/README.md dist/mfp/"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["prepublish"],
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/mfp",
+        "tag": "latest"
+      }
+    },
+    "publish-beta": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/mfp",
+        "tag": "beta"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------------------- */
+/*                                Toast styles                                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-toast.variables';
+
+:host {
+  @apply inline-block;
+}
+
+:host(.is-hidden) {
+  @apply hidden;
+}
+
+.mfp-toast {
+  @include animation-slide-in;
+  @apply flex items-center gap-[--mfp-toast--gap] p-b-[--mfp-toast--padding-y] p-i-[--mfp-toast--padding-x];
+  @apply rounded-[--mfp-toast--border-radius] bg-[--mfp-toast--background] shadow-[shadow:--mfp-toast--box-shadow];
+  @apply border-[length:--mfp-toast--border-width] border-[color:--mfp-toast--border-color];
+
+  border-style: var(--mfp-toast--border-style);
+}
+
+.mfp-toast--icon {
+  @apply flex;
+
+  &.info {
+    @apply text-[--mfp-toast--icon-color-info];
+  }
+
+  &.success {
+    @apply text-[--mfp-toast--icon-color-success];
+  }
+
+  &.alert {
+    @apply text-[--mfp-toast--icon-color-alert];
+  }
+
+  &.error {
+    @apply text-[--mfp-toast--icon-color-error];
+  }
+
+  &.loading {
+    @include animation-spin;
+    @apply text-[--mfp-toast--icon-color-loading];
+  }
+
+  &.custom {
+    @apply text-[--mfp-toast--icon-color-custom];
+  }
+}

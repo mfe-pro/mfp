@@ -1,0 +1,15 @@
+import { ArgTypes, Title, Subtitle } from '@storybook/addon-docs';
+
+<div className="mfp-doc__wrapper" data-theme="light">
+  <div className="mfp-doc__container">
+    <Title>{{sentenceCase name}}</Title>
+
+    <Subtitle>Usage</Subtitle>
+
+    <Subtitle>👍 When to use</Subtitle>
+
+    <Title>Properties</Title>
+
+    <ArgTypes of="mfp-{{kebabCase name}}" />
+  </div>
+</div>

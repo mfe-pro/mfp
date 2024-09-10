@@ -1,0 +1,108 @@
+/* -------------------------------------------------------------------------- */
+/*                                Textarea styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-textarea.variables';
+
+:host {
+  @apply block is-full;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Label                                   */
+/* -------------------------------------------------------------------------- */
+
+.mfp-textarea__label {
+  @apply text-[length:--mfp-textarea--label-text-size] text-[color:--mfp-textarea--label-text-color] m-be-[--mfp-textarea--label-margin-bottom];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                        Native HTML Textarea control                        */
+/* -------------------------------------------------------------------------- */
+
+.mfp-textarea__input {
+  @apply flex-auto resize-y bg-[--mfp-textarea--background-color] bs-[inherit];
+  // Border
+  @apply rounded-[--mfp-textarea--border-radius] border-[length:--mfp-textarea--border-width] border-[color:--mfp-textarea--border-color];
+  // Padding
+  @apply pe-[--mfp-textarea--padding-end] ps-[--mfp-textarea--padding-start] p-b-[--mfp-textarea--paddingY];
+  // Text
+  @apply text-[length:--mfp-textarea--text-size] text-[color:--mfp-textarea--text-color] placeholder:text-[color:--mfp-textarea--text-placeholder-color];
+  // Transition
+  @apply transition-colors ease-in-out;
+  // Hover
+  @apply [&:not([disabled]):not(:focus-within)]:hover:border-hover-stroke-brand;
+  // Disabled
+  @apply disabled:cursor-not-allowed disabled:opacity-60;
+  // Focus
+  &:not([disabled]):focus-within {
+    --mfp-ring-width: 1px;
+    --mfp-ring-offset-width: 0;
+    --mfp-ring-color-focus: var(--mfp-textarea--border-color-focus);
+
+    @apply focus border-[color:--mfp-ring-color-focus];
+  }
+}
+
+/* ------------------------------- Validations ------------------------------- */
+
+.mfp-textarea__input.validation-error {
+  @apply border-stroke-danger [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-danger;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.danger);
+
+    @apply border-active-stroke-danger;
+  }
+}
+
+.mfp-textarea__input.validation-success {
+  @apply border-stroke-success [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-success;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.success);
+
+    @apply border-active-stroke-success;
+  }
+}
+
+.mfp-textarea__input.validation-warning {
+  @apply border-stroke-warning [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-warning;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.warning);
+
+    @apply border-active-stroke-warning;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Helper text                                */
+/* -------------------------------------------------------------------------- */
+
+.mfp-textarea__helper {
+  @apply text-[length:--mfp-textarea--helper-text-size] text-[color:--mfp-textarea--helper-text-color] m-bs-[--mfp-textarea--helper-margin-top];
+}
+
+/* ------------------------------- Validations ------------------------------ */
+
+.mfp-textarea__helper.validation-error {
+  @apply text-text-danger;
+}
+
+.mfp-textarea__helper.validation-success {
+  @apply text-text-success;
+}
+
+.mfp-textarea__helper.validation-warning {
+  @apply text-text-warning;
+}
+
+/* ----------------------------- Helper counter ----------------------------- */
+
+/** Apply a disabled text color style to the textarea counter when the validation is none. */
+.mfp-textarea__helper[class~='validation-none'] {
+  .mfp-textarea__helper--counter {
+    @apply opacity-60;
+  }
+}

@@ -1,0 +1,19 @@
+/* -------------------------------------------------------------------------- */
+/*                          Slider custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-slider--size: The height of the slider track/progress area
+   * @prop --mfp-slider--border-radius: Slider border radius
+   * @prop --mfp-slider--thumb-size: Slider hover thumb size
+   * @prop --mfp-slider--progress-color: Slider progress background color
+   * @prop --mfp-slider--trackarea-color: Slider track background color
+   */
+
+  --mfp-slider--size: 4px;
+  --mfp-slider--border-radius: theme(borderRadius.xs);
+  --mfp-slider--thumb-size: 13px;
+  --mfp-slider--progress-color: theme(colors.ui.brand);
+  --mfp-slider--trackarea-color: theme(colors.ui.secondary);
+}

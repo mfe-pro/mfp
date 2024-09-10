@@ -1,0 +1,38 @@
+/* -------------------------------------------------------------------------- */
+/*                   Tag custom properties                  */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-tag--background-color: Tag background color
+   *
+   * @prop --mfp-tag--border-color: Tag border color
+   * @prop --mfp-tag--border-radius: Tag border radius
+   * @prop --mfp-tag--border-style: Tag border style
+   * @prop --mfp-tag--border-width: Tag border width
+   *
+   * @prop --mfp-tag--small-border-radius: Tag small border radius
+   * @prop --mfp-tag--small-gap: Tag small gap between content
+   * @prop --mfp-tag--small-padding-x: Tag small padding horizontal
+   * @prop --mfp-tag--small-padding-y: Tag small padding vertical
+   *
+   * @prop --mfp-tag--medium-gap: Tag medium gap between content
+   * @prop --mfp-tag--medium-padding-x: Tag medium padding horizontal
+   * @prop --mfp-tag--medium-padding-y: Tag medium padding vertical
+   */
+  --mfp-tag--background-color: theme(colors.ui.secondary);
+
+  --mfp-tag--border-color: theme(colors.transparent);
+  --mfp-tag--border-radius: theme(borderRadius.s);
+  --mfp-tag--border-style: solid;
+  --mfp-tag--border-width: theme(borderWidth.s);
+
+  --mfp-tag--small-border-radius: theme(borderRadius.xs);
+  --mfp-tag--small-gap: theme(spacing.xs2);
+  --mfp-tag--small-padding-x: calc(var(--mfp-spacing-xs) - var(--mfp-tag--border-width));
+  --mfp-tag--small-padding-y: calc(var(--mfp-spacing-xs3) - var(--mfp-tag--border-width));
+
+  --mfp-tag--medium-gap: theme(spacing.xs);
+  --mfp-tag--medium-padding-x: calc(var(--mfp-spacing-s) - var(--mfp-tag--border-width));
+  --mfp-tag--medium-padding-y: calc(var(--mfp-spacing-xs2) - var(--mfp-tag--border-width));
+}

@@ -1,0 +1,149 @@
+/* -------------------------------------------------------------------------- */
+/*                              Accordion styles                              */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-accordion.variables';
+
+:host {
+  @apply block;
+}
+
+.mfp-accordion {
+  &.disabled {
+    @apply cursor-not-allowed opacity-60;
+
+    .mfp-accordion__header {
+      @apply pointer-events-none;
+    }
+  }
+
+  &.small .mfp-accordion__header {
+    @apply gap-[--mfp-accordion--small-gap] pe-[--mfp-accordion--small-padding-end] ps-[--mfp-accordion--small-padding-start] p-b-[--mfp-accordion--small-padding-y];
+    @apply rounded-ee-[--mfp-accordion--small-radius] rounded-es-[--mfp-accordion--small-radius] rounded-se-[--mfp-accordion--small-radius] rounded-ss-[--mfp-accordion--small-radius];
+  }
+
+  &.medium .mfp-accordion__header {
+    @apply gap-[--mfp-accordion--medium-gap] pe-[--mfp-accordion--medium-padding-end] ps-[--mfp-accordion--medium-padding-start] p-b-[--mfp-accordion--medium-padding-y];
+    @apply rounded-ee-[--mfp-accordion--medium-radius] rounded-es-[--mfp-accordion--medium-radius] rounded-se-[--mfp-accordion--medium-radius] rounded-ss-[--mfp-accordion--medium-radius];
+  }
+
+  &[open] .mfp-accordion__header {
+    @apply border-[length:--mfp-accordion--expanded-border-width] border-[color:--mfp-accordion--expanded-border-color];
+    @apply rounded-ee-[0px] rounded-es-[0px];
+
+    border-style: var(--mfp-accordion--expanded-border-style);
+  }
+
+  &.small .mfp-accordion__body {
+    @apply rounded-ee-[--mfp-accordion--small-radius] rounded-es-[--mfp-accordion--small-radius] rounded-se-[0px] rounded-ss-[0px];
+  }
+
+  &.medium .mfp-accordion__body {
+    @apply rounded-ee-[--mfp-accordion--medium-radius] rounded-es-[--mfp-accordion--medium-radius] rounded-se-[0px] rounded-ss-[0px];
+  }
+
+  &.filled {
+    .mfp-accordion__header {
+      @apply bg-[--mfp-accordion--filled-collapsed-background] hover:bg-hover-ui-secondary;
+    }
+
+    .mfp-accordion__header--text {
+      @apply text-[--mfp-accordion--filled-collapsed-text-color];
+    }
+
+    .mfp-accordion__body {
+      @apply border-[length:--mfp-accordion--panel-filled-border-width] border-[color:--mfp-accordion--panel-filled-border-color];
+
+      border-style: var(--mfp-accordion--panel-filled-border-style);
+    }
+
+    &[open] .mfp-accordion__header {
+      @apply bg-[--mfp-accordion--filled-expanded-background] hover:bg-hover-ui-secondary;
+    }
+
+    &[open] .mfp-accordion__header--text {
+      @apply text-[--mfp-accordion--filled-expanded-text-color];
+    }
+  }
+
+  &.ghost {
+    .mfp-accordion__header {
+      @apply bg-[--mfp-accordion--ghost-collapsed-background] hover:bg-hover-ui-secondary;
+    }
+
+    .mfp-accordion__header--text {
+      @apply text-[--mfp-accordion--ghost-collapsed-text-color];
+    }
+
+    .mfp-accordion__body {
+      @apply border-[length:--mfp-accordion--panel-ghost-border-width] border-[color:--mfp-accordion--panel-ghost-border-color];
+
+      border-style: var(--mfp-accordion--panel-ghost-border-style);
+    }
+
+    &[open] .mfp-accordion__header {
+      @apply bg-[--mfp-accordion--ghost-expanded-background] hover:bg-hover-ui-secondary;
+    }
+
+    &[open] .mfp-accordion__header--text {
+      @apply text-[--mfp-accordion--ghost-expanded-text-color];
+    }
+  }
+
+  &.small.filled .mfp-accordion__body {
+    @apply pe-[--mfp-accordion--panel-small-filled-padding-end] ps-[--mfp-accordion--panel-small-filled-padding-start] p-b-[--mfp-accordion--panel-small-filled-padding-y];
+  }
+
+  &.medium.filled .mfp-accordion__body {
+    @apply pe-[--mfp-accordion--panel-medium-filled-padding-end] ps-[--mfp-accordion--panel-medium-filled-padding-start] p-b-[--mfp-accordion--panel-medium-filled-padding-y];
+  }
+
+  &.small.ghost .mfp-accordion__body {
+    @apply pe-[--mfp-accordion--panel-small-ghost-padding-end] ps-[--mfp-accordion--panel-small-ghost-padding-start] p-b-[--mfp-accordion--panel-small-ghost-padding-y];
+  }
+
+  &.medium.ghost .mfp-accordion__body {
+    @apply pe-[--mfp-accordion--panel-medium-ghost-padding-end] ps-[--mfp-accordion--panel-medium-ghost-padding-start] p-b-[--mfp-accordion--panel-medium-ghost-padding-y];
+  }
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+.mfp-accordion::details-content {
+  @apply block overflow-hidden transition-[block-size,content-visibility] duration-300 ease-in-out bs-0 [transition-behavior:allow-discrete];
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+.mfp-accordion[open]::details-content {
+  /* block-size: auto is just a fallback for browsers that don't support the calc-size() function */
+  @apply bs-auto;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+.mfp-accordion[open]:not(.no-animation)::details-content {
+  @apply supports-[block-size:calc-size(auto)]:bs-[calc-size(auto)];
+}
+
+.mfp-accordion__header {
+  // Since there's an overflow on the <summary> element, the focus outline is not visible,
+  // so we force it to be inset to avoid the overflow hidden.
+  --mfp-ring-offset-width: -2px;
+
+  @apply flex cursor-pointer select-none list-none items-center transition-colors duration-300 ease-in-out focus-visible:focus;
+  @apply border-[length:--mfp-accordion--collapsed-border-width] border-[color:--mfp-accordion--collapsed-border-color];
+
+  border-style: var(--mfp-accordion--collapsed-border-style);
+
+  &::marker,
+  &::-webkit-details-marker {
+    @apply hidden;
+  }
+}
+
+.mfp-accordion__header--text {
+  @apply flex-1;
+}
+
+.mfp-accordion__header--prefix,
+.mfp-accordion__header--suffix {
+  @apply flex items-center justify-center;
+}

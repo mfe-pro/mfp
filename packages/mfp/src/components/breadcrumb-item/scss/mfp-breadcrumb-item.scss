@@ -1,0 +1,22 @@
+/* -------------------------------------------------------------------------- */
+/*                                Breadcrumb item styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-breadcrumb-item.variables';
+
+.breadcrumb-item {
+  @apply border-[length:--mfp-breadcrumb-item--border-width] border-[color:--mfp-breadcrumb-item--border-color];
+  @apply rounded-[--mfp-breadcrumb-item--border-radius] bg-[--mfp-breadcrumb-item--background] shadow-[shadow:--mfp-breadcrumb-item--box-shadow];
+  @apply pe-[--mfp-breadcrumb-item--padding-end] ps-[--mfp-breadcrumb-item--padding-start] p-b-[--mfp-breadcrumb-item--paddingY];
+  @apply text-[length:--mfp-breadcrumb-item--text-size] font-regular leading-[--mfp-breadcrumb-item--line-height] text-[color:--mfp-breadcrumb-item--text-color];
+  @apply focus-visible:focus hover:text-hover-text-brand active:outline-none;
+  @apply transition-colors duration-300 ease-in-out;
+  @apply cursor-pointer no-underline;
+
+  border-style: var(--mfp-avatar--border-style);
+}
+
+.breadcrumb-separator {
+  @apply flex items-center text-[length:--mfp-breadcrumb-item--text-size-separator];
+  @apply pe-[--mfp-breadcrumb-item--padding-end-separator] ps-[--mfp-breadcrumb-item--padding-start-separator];
+}

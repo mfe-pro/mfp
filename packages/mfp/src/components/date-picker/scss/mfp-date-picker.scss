@@ -1,0 +1,222 @@
+/* -------------------------------------------------------------------------- */
+/*                        Date picker styles                                  */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-date-picker.variables';
+
+:host {
+  @apply block is-full;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    Label                                   */
+/* -------------------------------------------------------------------------- */
+
+.mfp-date-picker__label {
+  @apply flex flex-grow items-center gap-[--mfp-date-picker--gap] m-be-[--mfp-date-picker--label-margin-bottom];
+  @apply text-[length:--mfp-date-picker--label-text-size] text-[color:--mfp-date-picker--label-text-color];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                         Date picker input group control                    */
+/* -------------------------------------------------------------------------- */
+
+.mfp-date-picker__control {
+  @apply flex items-center transition-[border-color,box-shadow] is-full;
+  // Border
+  @apply rounded-[--mfp-date-picker--border-radius] border-[length:--mfp-date-picker--border-width] border-[color:--mfp-date-picker--border-color];
+  // Padding
+  @apply pe-[--mfp-date-picker--padding-end] ps-[--mfp-date-picker--padding-start] p-b-[--mfp-date-picker--paddingY];
+  // Text
+  @apply select-none text-[length:--mfp-date-picker--text-size] text-[color:--mfp-date-picker--text-color] placeholder:text-[color:--mfp-date-picker--text-placeholder-color];
+  // Hover
+  @apply [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-brand;
+
+  border-style: var(--mfp-date-picker--border-style);
+
+  // Focus
+  &:not(.disabled):focus-within {
+    --mfp-ring-width: 1px;
+    --mfp-ring-offset-width: 0;
+
+    @apply focus border-[color:--mfp-focus];
+  }
+
+  // Enable clear button whenever the input group control is hovered or has focus
+  &:not(.disabled):hover,
+  &:not(.disabled):focus-within {
+    .mfp-date-picker__control--clear {
+      @apply inline-block;
+    }
+  }
+}
+
+.mfp-date-picker__control.disabled {
+  @apply cursor-not-allowed opacity-60;
+}
+
+/* ------------------------------- Validation ------------------------------- */
+
+.mfp-date-picker__control.validation-error {
+  @apply border-stroke-danger [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-danger;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.danger);
+
+    @apply border-active-stroke-danger;
+  }
+}
+
+.mfp-date-picker__control.validation-success {
+  @apply border-stroke-success [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-success;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.success);
+
+    @apply border-active-stroke-success;
+  }
+}
+
+.mfp-date-picker__control.validation-warning {
+  @apply border-stroke-warning [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-warning;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.warning);
+
+    @apply border-active-stroke-warning;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Native HTML Input                             */
+/* -------------------------------------------------------------------------- */
+
+.mfp-date-picker__control--input {
+  @apply flex-auto cursor-[inherit] select-none appearance-none bg-[inherit] font-[inherit] text-[length:inherit] text-[color:inherit];
+  @apply border-none min-bs-[--mfp-date-picker--icon-size] min-is-0 p-b-0 p-i-0 m-b-0 m-i-0 focus:outline-none focus-visible:outline-none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Clear button                                */
+/* -------------------------------------------------------------------------- */
+
+.mfp-date-picker__control--clear::part(button) {
+  // Since the clear button is inside the input group control,
+  // we need to reset the focus ring styles
+  --mfp-ring-width: initial;
+  --mfp-ring-offset-width: initial;
+  --mfp-ring-color-focus: initial;
+
+  @apply rounded-xs border-none bs-auto p-b-0 p-i-0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Prefix and suffix                             */
+/* -------------------------------------------------------------------------- */
+
+.mfp-date-picker__control--prefix,
+.mfp-date-picker__control--suffix {
+  @apply pointer-events-none flex items-center text-[color:--mfp-date-picker--text-color];
+}
+
+.mfp-date-picker__control--prefix {
+  @apply me-[--mfp-date-picker--gap];
+}
+
+.mfp-date-picker__control--suffix {
+  @apply ms-[--mfp-date-picker--gap];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                         Slotted and internal icons                         */
+/* -------------------------------------------------------------------------- */
+
+mfp-icon,
+::slotted(mfp-icon) {
+  --mfp-icon--size: var(--mfp-date-picker--icon-size) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                         Customize Cally date picker                         */
+/* -------------------------------------------------------------------------- */
+
+calendar-date,
+calendar-range,
+calendar-multi {
+  &::part(header) {
+    @apply justify-center gap-s;
+  }
+
+  &::part(heading) {
+    @apply p-b-xs2 p-i-xs;
+  }
+
+  &::part(button) {
+    @apply rounded-s border-0 bg-transparent transition-colors duration-200 p-b-xs2 p-i-xs2;
+    @apply focus-visible:focus hover:bg-hover-ui-primary;
+  }
+
+  &::part(container) {
+    @apply bg-[--mfp-date-picker--background-color] p-b-0 p-i-0;
+  }
+}
+
+calendar-month {
+  /* stylelint-disable-next-line custom-property-pattern */
+  --color-accent: var(--mfp-ui--brand);
+
+  &::part(button) {
+    @apply flex items-center justify-center rounded-s bg-transparent font-default text-text-primary transition-colors duration-200 ease-in-out p-b-0 p-i-0;
+    @apply size-[--mfp-date-picker--day-size] focus-visible:focus hover:bg-hover-bg-secondary;
+  }
+
+  &::part(button day selected) {
+    @apply bg-[--mfp-date-picker--range-background-color] hover:bg-hover-ui-brand;
+  }
+
+  &::part(outside) {
+    @apply text-[--mfp-text--secondary] opacity-100;
+  }
+
+  &::part(selected) {
+    @apply rounded-s text-[color:--mfp-text--alt];
+  }
+
+  &::part(range-inner) {
+    @apply rounded-none;
+  }
+
+  &::part(today) {
+    @apply rounded-s border-[length:--mfp-date-picker--currentDate-border-width] border-[color:--mfp-date-picker--currentDate-border-color] text-[color:--mfp-date-picker--currentDate-text-color];
+
+    border-style: var(--mfp-date-picker--border-style);
+  }
+
+  &::part(today selected) {
+    @apply text-[color:--mfp-text--alt];
+  }
+
+  &::part(today range-inner) {
+    @apply rounded-none;
+  }
+
+  &::part(today range-start) {
+    @apply rounded-s rounded-es-none;
+  }
+
+  &::part(today range-end) {
+    @apply rounded-s rounded-ee-none;
+  }
+
+  &::part(range-start) {
+    @apply rounded-ee-none rounded-se-none;
+  }
+
+  &::part(range-end) {
+    @apply rounded-es-none rounded-ss-none;
+  }
+
+  &::part(range-start range-end) {
+    @apply rounded-s;
+  }
+}

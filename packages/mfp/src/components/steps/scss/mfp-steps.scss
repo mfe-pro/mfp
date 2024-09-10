@@ -1,0 +1,17 @@
+/* -------------------------------------------------------------------------- */
+/*                                Steps styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-steps.variables';
+
+:host {
+  @apply block;
+}
+
+::slotted(mfp-step-item:not(:first-child)) {
+  @apply ps-[--mfp-steps--gap];
+}
+
+::slotted(mfp-step-item:not(:last-child)) {
+  @apply pe-[--mfp-steps--gap];
+}

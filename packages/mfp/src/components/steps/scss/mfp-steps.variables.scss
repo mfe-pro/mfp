@@ -1,0 +1,12 @@
+/* -------------------------------------------------------------------------- */
+/*                          Steps custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-steps--divider-color - Divider color
+   * @prop --mfp-steps--gap - Gap between steps
+   */
+  --mfp-steps--divider-color: theme(colors.ui.secondary);
+  --mfp-steps--gap: theme(spacing.m);
+}

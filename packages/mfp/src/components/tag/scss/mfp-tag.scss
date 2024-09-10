@@ -1,0 +1,112 @@
+/* -------------------------------------------------------------------------- */
+/*                        Tag styles                        */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-tag.variables';
+
+:host {
+  @apply relative inline-block;
+}
+
+:host([removable][hidden]) {
+  @apply hidden;
+}
+
+.mfp-tag {
+  @apply box-border inline-flex select-none flex-row items-center justify-center bg-[--mfp-tag--background-color];
+  @apply gap-[--mfp-tag--medium-gap] font-medium leading-regular text-text-primary p-b-[--mfp-tag--medium-padding-y] p-i-[--mfp-tag--medium-padding-x];
+  @apply rounded-[--mfp-tag--border-radius] border-[length:--mfp-tag--border-width] border-[color:--mfp-tag--border-color];
+  @apply transition-colors duration-300 ease-in-out;
+
+  border-style: var(--mfp-tag--border-style);
+}
+
+/* ---------------------------------- Size ---------------------------------- */
+
+.mfp-tag__xsmall,
+.mfp-tag__small {
+  @apply gap-[--mfp-tag--small-gap] p-b-[--mfp-tag--small-padding-y] p-i-[--mfp-tag--small-padding-x];
+
+  /* Apply predefined border radius only if the border property have NO VALUE */
+  &:not(.has-border) {
+    @apply rounded-[--mfp-tag--small-border-radius];
+  }
+}
+
+/* --------------------------------- Action --------------------------------- */
+
+.mfp-tag__default.is-clickable {
+  @apply cursor-pointer;
+  // Focus
+  @apply focus-visible:focus;
+  // Hover
+  @apply hover:enabled:bg-[color-mix(in_srgb,_var(--mfp-tag--background-color),_white_20%)];
+  // Active/Selected
+  @apply [&.active]:text-[--mfp-text--alt] [&.active]:[--mfp-tag--background-color:--mfp-ui--brand];
+  // Disabled
+  @apply disabled:cursor-not-allowed disabled:border-none disabled:opacity-60;
+}
+
+/* ------------------------------ Color styles ------------------------------ */
+
+.mfp-tag__error {
+  &.mfp-tag__filled {
+    @apply bg-[color:--mfp-ui--danger] text-[color:--mfp-text--alt];
+  }
+
+  &.mfp-tag__outline {
+    @apply bg-[color:--mfp-ui--danger-alt] text-[color:--mfp-text--danger] [--mfp-tag--border-color:--mfp-stroke--danger];
+  }
+}
+
+.mfp-tag__gray {
+  &.mfp-tag__filled {
+    @apply bg-[color:--mfp-ui--tertiary] text-[color:--mfp-text--alt];
+  }
+
+  &.mfp-tag__outline {
+    @apply bg-[color:--mfp-ui--primary] text-[color:--mfp-text--primary] [--mfp-tag--border-color:--mfp-stroke--tertiary];
+  }
+}
+
+.mfp-tag__info {
+  &.mfp-tag__filled {
+    @apply bg-[color:--mfp-ui--brand] text-[color:--mfp-text--alt];
+  }
+
+  &.mfp-tag__outline {
+    @apply bg-[color:--mfp-ui--brand-alt] text-[color:--mfp-text--brand] [--mfp-tag--border-color:--mfp-stroke--brand];
+  }
+}
+
+.mfp-tag__success {
+  &.mfp-tag__filled {
+    @apply bg-[color:--mfp-ui--success] text-[color:--mfp-text--alt];
+  }
+
+  &.mfp-tag__outline {
+    @apply bg-[color:--mfp-ui--success-alt] text-[color:--mfp-text--success] [--mfp-tag--border-color:--mfp-tag--border-success];
+  }
+}
+
+.mfp-tag__warning {
+  &.mfp-tag__filled {
+    @apply bg-[color:--mfp-ui--warning] text-[color:--mfp-text--alt];
+  }
+
+  &.mfp-tag__outline {
+    @apply border-[color:--mfp-stroke--warning] bg-[color:--mfp-ui--warning-alt] text-[color:--mfp-text--warning];
+  }
+}
+
+/* ------------------------------ Close button ------------------------------ */
+
+.mfp-tag__close::part(button) {
+  @apply pointer-events-none border-0 bs-fit p-b-0 p-i-0;
+}
+
+/* --------------- Apply the right size to the mfp-icon prefix --------------- */
+
+.mfp-tag__prefix ::slotted(mfp-icon) {
+  --mfp-icon--size: var(--mfp-tag--icon-prefix-size) !important;
+}

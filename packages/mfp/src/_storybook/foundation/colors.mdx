@@ -1,0 +1,112 @@
+import React from 'react';
+import { Meta, Title, Subtitle, Unstyled } from '@storybook/blocks';
+import { capitalize, mapColors } from './helper';
+
+<Meta title="Foundation/Colors" />
+
+<div className="mfp-doc__wrapper">
+  <div className="mfp-doc__container" >
+    <Unstyled>
+      <Title>Cores</Title>
+
+      <p className="m-be-xxl3">
+        As categorias principais de cores incluem cor da marca, destaque, neutras, sistema e dados. Essas cores são agrupadas com base na sua aplicação pretendida: texto (cores para tipografia), UI (cores para pequenas formas e elementos), fundo (cores para grandes superfícies), contorno (cores para delinear e bordas) e cores de dados e sistema (cores para gráficos, tabelas e mensagens do sistema).
+      </p>
+
+      <Subtitle>Cores da marca</Subtitle>
+
+      Elas representam o alicerce da nossa identidade visual e são cuidadosamente selecionadas para refletir a essência e os valores da nossa marca.
+Use a cor da marca com moderação para criar uma linguagem visual forte e coesa.
+
+      {Object.entries({ brand }).map(([name, value]) => (
+        <ColorItem name={name} value={value} />
+      ))}
+
+      <Subtitle>Cores de destaque</Subtitle>
+
+      As cores de destaque são usadas como um realce para criar interesse visual e chamar a atenção para elementos específicos do design dentro do esquema geral de cores.
+
+      {Object.entries({ accent }).map(([name, value]) => (
+        <ColorItem name={name} value={value} />
+      ))}
+
+      {(document.querySelector('body').getAttribute('mfp-theme') === 'mfp') && (
+        <div className="flex gap-s items-center rounded-xs border-s border-solid border-stroke-warning bg-ui-warning-alt p-s m-be-xxl">
+          <mfp-icon name="warning" color="icon--warning" weight="fill"></mfp-icon>
+          <p className="text-s">No tema MFP padrão a <b className="font-bold"> cor de destaque não é utilizada</b>.</p>
+        </div>
+      )}
+
+      <Subtitle>Cores de fundo</Subtitle>
+
+      As cores de fundo são usadas para criar hierarquia visual e estrutura na interface. Elas são utilizadas para separar o conteúdo e criar uma distinção clara entre as diferentes seções da interface.
+
+      {Object.entries({ background }).map(([name, value]) => (
+        <ColorItem name={name} value={value} />
+      ))}
+
+      <Subtitle>Cores da interface do usuário</Subtitle>
+
+      Essas cores são usadas para criar uma linguagem visual consistente e harmoniosa em toda a interface. Elas ajudam a criar uma distinção clara entre diferentes elementos e a guiar o usuário pela interface
+
+      {Object.entries({ ui, text, icon, stroke }).map(([name, value]) => (
+        <ColorItem name={name} value={value} />
+      ))}
+
+      <Subtitle>Cores do sistema</Subtitle>
+
+      As cores do sistema são usadas para transmitir informações ao usuário. Elas indicam o status de uma ação ou fornecem feedback ao usuário.
+
+      {Object.entries({ success, danger, warning, info }).map(([name, value]) => (
+        <ColorItem name={name} value={value} />
+      ))}
+
+      <Subtitle>Cores neutras</Subtitle>
+
+      Essas cores ajudam a criar uma experiência de usuário confortável e acessível, complementando outras cores na paleta.
+
+      {Object.entries({ whiteBlack, neutral }).map(([name, value]) => {
+        if (name === 'whiteBlack') name = 'White & Black';
+        return <ColorItem name={name} value={value} />;
+      })}
+
+      <Subtitle>Cores de dados</Subtitle>
+
+      As cores de dados são um conjunto de tons distintos e facilmente distinguíveis, projetados especificamente para visualizar e apresentar dados em gráficos, tabelas e outros elementos orientados por dados.
+
+      {Object.entries({ data }).map(([name, value]) => (
+        <ColorItem name={name} value={value} />
+      ))}
+    </Unstyled>
+  </div>
+</div>
+
+export const ColorItem = ({ name, value }) => (
+  <div className="flex flex-col items-start m-b-xl">
+    <div className="block m-be-s">{capitalize(name)}</div>
+    <div className="flex flex-wrap gap-xs is-full">
+      {Object.entries(value).map(([colorName, colorValue]) => (
+        <div className="flex flex-1 flex-col text-center">
+          <div key={colorName} className="flex is-full bs-14 border-solid border-s border-stroke-primary m-be-xs" style={{ backgroundColor: `var(--${colorName})` }}></div>
+          <p className="!text-xs !font-bold">{`--${colorName}`}</p>
+          <p className="!text-xs !text-text-secondary">{colorValue}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+export const brand = mapColors(['mfp-brand-light', 'mfp-brand', 'mfp-brand-dark']);
+export const accent = mapColors(['mfp-accent-light', 'mfp-accent', 'mfp-accent-dark']);
+export const background = mapColors(['mfp-background--primary', 'mfp-background--secondary', 'mfp-background--tertiary', 'mfp-background--alt', 'mfp-background--inverse', 'mfp-background--brand', 'mfp-background--overlay']);
+export const ui = mapColors(['mfp-ui--primary', 'mfp-ui--secondary', 'mfp-ui--tertiary', 'mfp-ui--inverse', 'mfp-ui--brand', 'mfp-ui--brand-alt', 'mfp-ui--alt']);
+export const text = mapColors(['mfp-text--primary', 'mfp-text--secondary', 'mfp-text--inverse', 'mfp-text--brand', 'mfp-text--alt']);
+export const icon = mapColors(['mfp-icon--primary', 'mfp-icon--alt', 'mfp-icon--secondary', 'mfp-icon--inverse', 'mfp-icon--brand']);
+export const stroke = mapColors(['mfp-stroke--primary', 'mfp-stroke--secondary', 'mfp-stroke--tertiary', 'mfp-stroke--inverse', 'mfp-stroke--brand', 'mfp-stroke--alt']);
+export const success = mapColors(['mfp-success-light', 'mfp-success', 'mfp-success-dark']);
+export const danger = mapColors(['mfp-danger-light', 'mfp-danger', 'mfp-danger-dark']);
+export const warning = mapColors(['mfp-warning-light', 'mfp-warning', 'mfp-warning-dark']);
+export const info = mapColors(['mfp-info-light', 'mfp-info', 'mfp-info-dark']);
+export const whiteBlack = mapColors(['mfp-white', 'mfp-black']);
+export const neutral = mapColors(['mfp-neutral-50', 'mfp-neutral-100', 'mfp-neutral-200', 'mfp-neutral-300', 'mfp-neutral-400', 'mfp-neutral-500', 'mfp-neutral-600', 'mfp-neutral-700', 'mfp-neutral-800', 'mfp-neutral-900', 'mfp-neutral-950', 'mfp-neutral-1000']);
+export const data = mapColors(['mfp-data-01', 'mfp-data-02', 'mfp-data-03', 'mfp-data-04', 'mfp-data-05', 'mfp-data-06', 'mfp-data-07', 'mfp-data-08', 'mfp-data-09', 'mfp-data-10', 'mfp-data-11', 'mfp-data-12']);

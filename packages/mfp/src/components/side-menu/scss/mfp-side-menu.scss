@@ -1,0 +1,87 @@
+/* -------------------------------------------------------------------------- */
+/*                                Side menu styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-side-menu.variables';
+
+:host {
+  @apply flex overflow-hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Aside container                              */
+/* -------------------------------------------------------------------------- */
+
+.mfp-side-menu {
+  @apply fixed flex h-dynamic-vh grow flex-col bg-[--mfp-side-menu--bg-color] is-[--mfp-side-menu--width] inset-bs-0 inset-is-0;
+  @apply border-0 border-e-s border-solid border-[color:--mfp-side-menu--border-color];
+  @apply transition-[background-color,width] duration-150;
+  @include hide-scrollbar;
+}
+
+.mfp-side-menu.is-collapsed {
+  @apply is-[--mfp-side-menu--width-collapse];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Logo container                               */
+/* -------------------------------------------------------------------------- */
+
+.mfp-side-menu--logo {
+  @apply sticky top-0 z-[1] p-xs;
+  @apply box-content flex items-center bg-[--mfp-side-menu--bg-color] text-[color:--mfp-side-menu--brand-color];
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 APPEARANCE                                 */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * The following change the default values of some CSS custom properties
+ * to make it complain with the side menu appearance selected
+ */
+
+:host([size='small']) {
+  ::slotted(mfp-side-menu-item) {
+    --mfp-side-menu-item--paddingY: theme(space.s);
+  }
+}
+
+:host([appearance='brand']) {
+  --mfp-focus: theme(colors.stroke.alt);
+  --mfp-side-menu--bg-color: theme(colors.ui.brand);
+  --mfp-side-menu--brand-color: theme(colors.stroke.inverse);
+  --mfp-side-menu--border-color: theme(colors.ui.brand);
+
+  ::slotted(mfp-side-menu-item) {
+    --mfp-side-menu-item--bg-hover: color-mix(in srgb, var(--mfp-ui--brand), var(--mfp-hover) 20%);
+
+    --mfp-side-menu-item--text-default: theme(textColor.text.alt);
+    --mfp-side-menu-item--text-hover: theme(textColor.text.alt);
+  }
+
+  .mfp-side-menu--footer ::slotted([slot='footer']) {
+    --mfp-ui--secondary: theme(colors.transparent);
+    --mfp-text--primary: theme(textColor.text.inverse);
+  }
+}
+
+:host([appearance='inverse']) {
+  --mfp-side-menu--bg-color: theme(colors.ui.inverse);
+  --mfp-side-menu--brand-color: theme(colors.stroke.inverse);
+  --mfp-side-menu--border-color: theme(colors.ui.inverse);
+
+  ::slotted(mfp-side-menu-item) {
+    --mfp-side-menu-item--bg-hover: color-mix(in srgb, var(--mfp-ui--inverse), var(--mfp-hover) 20%);
+    --mfp-side-menu-item--bg-active: color-mix(in srgb, var(--mfp-ui--alt), var(--mfp-active) 20%);
+
+    --mfp-side-menu-item--text-default: theme(textColor.text.inverse);
+    --mfp-side-menu-item--text-hover: theme(textColor.text.inverse);
+    --mfp-side-menu-item--text-active: theme(textColor.text.primary);
+  }
+
+  .mfp-side-menu--footer ::slotted([slot='footer']) {
+    --mfp-ui--secondary: theme(colors.transparent);
+    --mfp-text--primary: theme(textColor.text.inverse);
+  }
+}

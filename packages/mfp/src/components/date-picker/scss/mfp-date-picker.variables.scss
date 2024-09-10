@@ -1,0 +1,58 @@
+/* -------------------------------------------------------------------------- */
+/*                   Date picker custom properties                  */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-date-picker--background-color - Date picker background color
+   * @prop --mfp-date-picker--border-color - Date picker border color
+   * @prop --mfp-date-picker--border-color-focus - Date picker border color on focus
+   * @prop --mfp-date-picker--border-color-disabled - Date picker border color when disabled
+   * @prop --mfp-date-picker--border-radius - Date picker border radius
+   * @prop --mfp-date-picker--border-width - Date picker border width
+   * @prop --mfp-date-picker--currentDate-border-width - Date picker border width for current date
+   * @prop --mfp-date-picker--border-style - Date picker border style
+   * @prop --mfp-date-picker--gap - Gap between Date picker content and prefix/suffix
+   * @prop --mfp-date-picker--icon-size - Icon size to use in prefix/suffix and clear button
+   * @prop --mfp-date-picker--label-margin-bottom - Date picker label margin bottom
+   * @prop --mfp-date-picker--label-text-color - Date picker label text color
+   * @prop --mfp-date-picker--currentDate-text-color - Date picker label text color for currentDate
+   * @prop --mfp-date-picker--label-text-size - Date picker label text size
+   * @prop --mfp-date-picker--padding-start - Date picker padding start
+   * @prop --mfp-date-picker--padding-end - Date picker padding end
+   * @prop --mfp-date-picker--paddingY - Date picker padding top and bottom
+   * @prop --mfp-date-picker--day-size - Date picker button day size
+   * @prop --mfp-date-picker--text-color - Date picker text color
+   * @prop --mfp-date-picker--text-size - Date picker text size
+   * @prop --mfp-date-picker--text-placeholder-color - Date picker placeholder text color
+   * @prop --mfp-date-picker--range-background-color - Background color for the selected date range in the date picker
+   * @prop --mfp-date-picker--currentDate-border-color - Date picker border color for current date
+   */
+  --mfp-date-picker--background-color: theme(colors.ui.primary);
+
+  --mfp-date-picker--border-color: theme(colors.stroke.tertiary);
+  --mfp-date-picker--border-radius: theme(borderRadius.s);
+  --mfp-date-picker--border-width: theme(borderWidth.s);
+  --mfp-date-picker--currentDate-border-width: theme(borderWidth.m);
+  --mfp-date-picker--border-style: solid;
+
+  --mfp-date-picker--gap: theme(spacing.xs);
+
+  --mfp-date-picker--icon-size: 24px;
+
+  --mfp-date-picker--label-margin-bottom: theme(spacing.xs);
+  --mfp-date-picker--label-text-size: theme(fontSize.s);
+  --mfp-date-picker--label-text-color: theme(colors.text.primary);
+  --mfp-date-picker--currentDate-text-color: theme(colors.text.brand);
+
+  --mfp-date-picker--padding-start: theme(spacing.m);
+  --mfp-date-picker--padding-end: theme(spacing.m);
+  --mfp-date-picker--paddingY: theme(spacing.s);
+
+  --mfp-date-picker--day-size: theme(spacing.xl);
+  --mfp-date-picker--text-color: theme(colors.text.primary);
+  --mfp-date-picker--text-size: theme(fontSize.m);
+  --mfp-date-picker--text-placeholder-color: theme(colors.text.secondary);
+  --mfp-date-picker--range-background-color: theme(colors.ui.brand);
+  --mfp-date-picker--currentDate-border-color: theme(colors.stroke.brand);
+}

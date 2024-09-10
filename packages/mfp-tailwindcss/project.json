@@ -1,0 +1,45 @@
+{
+  "name": "mfp-tailwindcss",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mfp-tailwindcss/src",
+  "projectType": "library",
+  "tags": ["publishable", "preset", "tailwindcss"],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "format": ["esm", "cjs"],
+        "deleteOutputPath": true,
+        "generateExportsField": true,
+        "outputPath": "dist/mfp-tailwindcss",
+        "main": "packages/mfp-tailwindcss/src/index.ts",
+        "tsConfig": "packages/mfp-tailwindcss/tsconfig.lib.json",
+        "project": "packages/mfp-tailwindcss/package.json",
+        "external": ["tailwindcss", "tailwindcss-theme-swapper"],
+        "assets": [
+          {
+            "glob": "packages/mfp-tailwindcss/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "dependsOn": ["build"],
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.ts", "{projectRoot}/package.json", "{projectRoot}/project.json"]
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "distFolderPath": "dist/mfp-tailwindcss",
+        "tag": "latest"
+      }
+    }
+  }
+}

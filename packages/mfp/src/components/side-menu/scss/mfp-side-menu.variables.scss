@@ -1,0 +1,9 @@
+/* -------------------------------------------------------------------------- */
+/*                          Side menu custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  --mfp-side-menu--bg-color: theme(colors.ui.primary);
+  --mfp-side-menu--brand-color: theme(colors.ui.brand);
+  --mfp-side-menu--border-color: var(--mfp-neutral-100);
+}

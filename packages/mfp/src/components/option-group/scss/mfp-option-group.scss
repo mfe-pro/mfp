@@ -1,0 +1,27 @@
+/* -------------------------------------------------------------------------- */
+/*                                Option group styles                */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-option-group.variables';
+
+:host {
+  @apply block;
+}
+
+.mfp-option-group {
+  @apply flex overflow-hidden overflow-ellipsis;
+  @apply bg-[--mfp-option-group--background] text-[length:--mfp-option-group--font-size] leading-[--mfp-option-group--line-height];
+  @apply pe-[--mfp-option-group--label-padding-end] ps-[--mfp-option-group--label-padding-start] p-b-[--mfp-option-group--label-paddingY] p-i-[--mfp-option-group--label-paddingY];
+
+  &__child {
+    @apply flex items-center;
+  }
+}
+
+.mfp-option-group__label {
+  @apply pe-[--mfp-option-group--label-text-padding-end] ps-[--mfp-option-group--label-text-padding-start];
+}
+
+.mfp-option-group__container ::slotted(mfp-option) {
+  @apply ps-[--mfp-option-group--container-padding-start];
+}

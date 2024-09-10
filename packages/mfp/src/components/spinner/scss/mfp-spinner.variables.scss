@@ -1,0 +1,24 @@
+/* -------------------------------------------------------------------------- */
+/*                          Spinner custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-spinner--color: Spinner color
+   * @prop --mfp-spinner--size-large: Spinner large size
+   * @prop --mfp-spinner--size-medium: Spinner medium size
+   * @prop --mfp-spinner--size-small: Spinner small size
+   * @prop --mfp-spinner--large-text-fontSize: Spinner large text font size
+   * @prop --mfp-spinner--medium-text-fontSize: Spinner medium text font size
+   * @prop --mfp-spinner--small-text-fontSize: Spinner small text font size
+   * @prop --mfp-spinner--text-lineHeight: Spinner text line height
+   */
+  --mfp-spinner--color: theme(colors.ui.brand);
+  --mfp-spinner--size-large: 56px;
+  --mfp-spinner--size-medium: 48px;
+  --mfp-spinner--size-small: 32px;
+  --mfp-spinner--large-text-fontSize: theme(fontSize.m);
+  --mfp-spinner--medium-text-fontSize: theme(fontSize.s);
+  --mfp-spinner--small-text-fontSize: theme(fontSize.xs);
+  --mfp-spinner--text-lineHeight: theme(lineHeight.large);
+}

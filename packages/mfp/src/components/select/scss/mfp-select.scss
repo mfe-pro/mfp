@@ -1,0 +1,173 @@
+/* -------------------------------------------------------------------------- */
+/*                                Select styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-select.variables';
+
+:host {
+  @apply block w-full;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            Label and Helper text                           */
+/* -------------------------------------------------------------------------- */
+
+.mfp-select__label {
+  @apply flex items-center m-be-[--mfp-select--label-margin-bottom];
+  @apply text-[length:--mfp-select--label-text-size] text-[color:--mfp-select--label-text-color];
+}
+
+.mfp-select__helper-text {
+  @apply text-[length:--mfp-select--helper-text-size] text-[color:--mfp-select--helper-text-color] m-bs-[--mfp-select--helper-margin-top];
+}
+
+.mfp-select__helper-text.validation-error {
+  @apply text-text-danger;
+}
+
+.mfp-select__helper-text.validation-success {
+  @apply text-text-success;
+}
+
+.mfp-select__helper-text.validation-warning {
+  @apply text-text-warning;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                         Select input group control                         */
+/* -------------------------------------------------------------------------- */
+
+.mfp-select__dropdown:has(:focus-within, :focus-visible) {
+  // The focus state will be controlled by the dropdown element
+  // if any of its children has focus, the dropdown will set the focus state to the .mfp-select__control
+  .mfp-select__control {
+    --mfp-ring-width: 1px;
+    --mfp-ring-offset-width: 0;
+    --mfp-ring-color-focus: var(--mfp-select--border-color-focus);
+
+    @apply focus border-[color:--mfp-select--border-color-focus];
+  }
+}
+
+.mfp-select__control {
+  @apply flex items-center transition-[border-color,box-shadow] is-full;
+  // Border
+  @apply rounded-[--mfp-select--border-radius] border-[length:--mfp-select--border-width] border-[color:--mfp-select--border-color];
+  // Padding
+  @apply pe-[--mfp-select--padding-end] ps-[--mfp-select--padding-start] p-b-[var(--mfp-select--paddingY)];
+  // Text
+  @apply select-none text-[length:--mfp-select--text-size] text-[color:--mfp-select--text-color] placeholder:text-[color:--mfp-select--text-placeholder-color];
+  // Hover
+  @apply [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-brand;
+
+  border-style: var(--mfp-select--border-style);
+
+  // Enable clear button whenever the input group control is hovered or has focus
+  &:not(.disabled):hover,
+  &:not(.disabled):focus-within {
+    .mfp-select__control--clear {
+      @apply inline-block;
+    }
+  }
+}
+
+.mfp-select__control.disabled {
+  @apply cursor-not-allowed opacity-60;
+}
+
+/* ------------------------------- Validation ------------------------------- */
+
+.mfp-select__control.validation-error {
+  @apply border-stroke-danger [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-danger;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.danger);
+
+    @apply border-active-stroke-danger;
+  }
+}
+
+.mfp-select__control.validation-success {
+  @apply border-stroke-success [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-success;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.success);
+
+    @apply border-active-stroke-success;
+  }
+}
+
+.mfp-select__control.validation-warning {
+  @apply border-stroke-warning [&:not(.disabled):not(:focus-within)]:hover:border-hover-stroke-warning;
+
+  &:not(.disabled):focus-within {
+    --mfp-ring-color-focus: theme(colors.stroke.warning);
+
+    @apply border-active-stroke-warning;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Native HTML Input                             */
+/* -------------------------------------------------------------------------- */
+
+.mfp-select__control--input {
+  @apply flex-auto cursor-[inherit] select-none appearance-none bg-[inherit] font-[inherit] text-[length:inherit] text-[color:inherit];
+  @apply m-0 border-none p-0 min-bs-[var(--mfp-select--icon-size)] min-is-0 focus:outline-none focus-visible:outline-none;
+
+  box-shadow: none;
+  font-weight: inherit;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Clear button                                */
+/* -------------------------------------------------------------------------- */
+
+.mfp-select__control--clear::part(button) {
+  // Since the clear button is inside the input group control,
+  // we need to reset the focus ring styles
+  --mfp-ring-width: initial;
+  --mfp-ring-offset-width: initial;
+  --mfp-ring-color-focus: initial;
+
+  @apply rounded-xs border-none p-0 bs-auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              Prefix and suffix                             */
+/* -------------------------------------------------------------------------- */
+
+.mfp-select__control--prefix,
+.mfp-select__control--suffix {
+  @apply pointer-events-none flex items-center text-[color:var(--mfp-select--text-color)];
+}
+
+.mfp-select__control--prefix {
+  @apply me-[--mfp-select--gap];
+}
+
+.mfp-select__control--suffix {
+  @apply ms-[--mfp-select--gap] transition-transform duration-300 ease-in-out;
+}
+
+.mfp-select__tags {
+  @apply me-xs2 flex flex-1 gap-xs2;
+
+  mfp-tag,
+  ::slotted(mfp-tag) {
+    @apply inline-flex;
+  }
+
+  mfp-tag::part(text) {
+    @apply text-nowrap leading-small;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                         Slotted and internal icons                         */
+/* -------------------------------------------------------------------------- */
+
+mfp-icon,
+::slotted(mfp-icon) {
+  --mfp-icon--size: var(--mfp-select--icon-size) !important;
+}

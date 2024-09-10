@@ -1,0 +1,49 @@
+/* -------------------------------------------------------------------------- */
+/*                          Textarea custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-textarea--background-color - Textarea background color
+   * @prop --mfp-textarea--border-color - Textarea border color
+   * @prop --mfp-textarea--border-color-focus - Textarea border color on focus
+   * @prop --mfp-textarea--border-radius - Textarea border radius
+   * @prop --mfp-textarea--border-width - Textarea border width
+   * @prop --mfp-textarea--border-style - Textarea border style
+   * @prop --mfp-textarea--helper-margin-top - Textarea helper text margin top
+   * @prop --mfp-textarea--helper-text-color - Textarea helper text color
+   * @prop --mfp-textarea--helper-text-size - Textarea helper text size
+   * @prop --mfp-textarea--label-margin-bottom - Textarea label margin bottom
+   * @prop --mfp-textarea--label-text-color - Textarea label text color
+   * @prop --mfp-textarea--label-text-size - Textarea label text size
+   * @prop --mfp-textarea--paddingY - Textarea padding top and bottom
+   * @prop --mfp-textarea--padding-start - Textarea padding start
+   * @prop --mfp-textarea--padding-end - Textarea padding end
+   * @prop --mfp-textarea--text-color - Textarea text color
+   * @prop --mfp-textarea--text-size - Textarea text size
+   * @prop --mfp-textarea--text-placeholder-color - Textarea placeholder text color
+   */
+  --mfp-textarea--background-color: theme(colors.ui.primary);
+
+  --mfp-textarea--border-color: theme(colors.stroke.tertiary);
+  --mfp-textarea--border-color-focus: theme(colors.stroke.brand);
+  --mfp-textarea--border-radius: theme(borderRadius.s);
+  --mfp-textarea--border-width: theme(borderWidth.s);
+  --mfp-textarea--border-style: solid;
+
+  --mfp-textarea--helper-margin-top: theme(spacing.xs);
+  --mfp-textarea--helper-text-size: theme(fontSize.s);
+  --mfp-textarea--helper-text-color: theme(colors.text.primary);
+
+  --mfp-textarea--label-margin-bottom: theme(spacing.xs);
+  --mfp-textarea--label-text-size: theme(fontSize.s);
+  --mfp-textarea--label-text-color: theme(colors.text.primary);
+
+  --mfp-textarea--paddingY: theme(spacing.s);
+  --mfp-textarea--padding-start: theme(spacing.m);
+  --mfp-textarea--padding-end: theme(spacing.m);
+
+  --mfp-textarea--text-color: theme(colors.text.primary);
+  --mfp-textarea--text-size: theme(fontSize.m);
+  --mfp-textarea--text-placeholder-color: theme(colors.text.secondary);
+}

@@ -1,0 +1,31 @@
+@import './mfp-status.variables';
+
+.mfp-status__circle {
+  &::part(base) {
+    --mfp-badge--size-medium: var(--mfp-status-circle--size);
+  }
+
+  &.success::part(base) {
+    --mfp-badge--background-color: theme(backgroundColor.ui.success);
+  }
+
+  &.danger::part(base) {
+    --mfp-badge--background-color: theme(backgroundColor.ui.danger);
+  }
+
+  &.neutral::part(base) {
+    --mfp-badge--background-color: theme(backgroundColor.ui.secondary);
+  }
+
+  &.alert::part(base) {
+    --mfp-badge--background-color: theme(backgroundColor.ui.warning);
+  }
+
+  &.info::part(base) {
+    --mfp-badge--background-color: theme(backgroundColor.ui.brand);
+  }
+}
+
+.mfp-status__text ::slotted(*) {
+  @apply text-s font-medium leading-regular text-text-primary p-b-0 p-i-0 m-b-0 m-i-0;
+}

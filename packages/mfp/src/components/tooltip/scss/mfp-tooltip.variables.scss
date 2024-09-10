@@ -1,0 +1,39 @@
+/* -------------------------------------------------------------------------- */
+/*                          Tooltip custom properties                         */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+   * @prop --mfp-tooltip--background-color - Tooltip background color
+   * @prop --mfp-tooltip--box-shadow - Tooltip box shadow
+   * @prop --mfp-tooltip--font-size - Tooltip font size
+   * @prop --mfp-tooltip--line-height - Tooltip line height
+   * @prop --mfp-tooltip--text-color - Tooltip text color
+   * @prop --mfp-tooltip--paddingX - Tooltip horizontal padding
+   * @prop --mfp-tooltip--paddingY - Tooltip vertical padding
+   * @prop --mfp-tooltip--border-color - Tooltip border color
+   * @prop --mfp-tooltip--border-radius - Tooltip border radius
+   * @prop --mfp-tooltip--border-style - Tooltip border style
+   * @prop --mfp-tooltip--border-width - Tooltip border width
+   * @prop --mfp-tooltip--z-index: Tooltip z-index
+   */
+  --mfp-tooltip--background-color: theme(colors.ui.inverse);
+  --mfp-tooltip--box-shadow: theme(boxShadow.m);
+
+  --mfp-tooltip--font-size: theme(fontSize.m);
+  --mfp-tooltip--line-height: theme(lineHeight.regular);
+  --mfp-tooltip--text-color: theme(colors.text.inverse);
+
+  --mfp-tooltip--paddingX: theme(padding.xs);
+  --mfp-tooltip--paddingY: theme(padding.xs2);
+
+  --mfp-tooltip--border-color: theme(colors.transparent);
+  --mfp-tooltip--border-radius: theme(borderRadius.s);
+  --mfp-tooltip--border-style: none;
+  --mfp-tooltip--border-width: unset;
+
+  --mfp-tooltip--max-width: 320px;
+  --mfp-tooltip--width: max-content;
+
+  --mfp-tooltip--z-index: theme(zIndex.10);
+}

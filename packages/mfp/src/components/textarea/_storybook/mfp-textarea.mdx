@@ -1,0 +1,35 @@
+import { ArgTypes, Title, Subtitle } from '@storybook/addon-docs';
+
+<div className="mfp-doc__wrapper" data-theme="light">
+  <div className="mfp-doc__container" >
+    <Title>Textarea</Title>
+
+    O componente **Textarea** é um controle de entrada de texto em várias linhas que é frequentemente usado em formulários para coletar entradas de usuário, como comentários ou avaliações.
+
+    <Subtitle>Uso</Subtitle>
+
+    Algumas das melhores práticas para usar o componente **Textarea** são:
+
+    - **Use um rótulo**: Sempre associe um elemento `<label>` à textarea para fins de acessibilidade.
+    - **Use texto de placeholder**: Você pode usar o atributo placeholder para fornecer uma dica curta que descreva o valor esperado da textarea.
+    - **Use o atributo rows**: Você pode usar o atributo rows para especificar um tamanho exato para a textarea.
+    - **Use o atributo maxlength**: Você pode usar o atributo maxlength para especificar o número máximo de caracteres permitidos na textarea.
+    - **Use o atributo wrap**: Você pode usar o atributo wrap para especificar como o texto na textarea será quebrado ao ser enviado em um formulário. Os valores possíveis são hard e soft. O valor hard significa que o texto será quebrado na borda da textarea e cada linha terminará com um caractere de nova linha. O valor soft significa que o texto não será quebrado pelo navegador e nenhum caractere de nova linha será adicionado.
+    - **Use o atributo autocomplete**: Você pode usar o atributo autocomplete para indicar se o valor da textarea pode ser automaticamente completado pelo navegador com base em entradas anteriores do usuário. Os valores possíveis são on e off. O valor on significa que o navegador pode sugerir valores para a textarea, enquanto o valor off significa que não pode. Isso pode ajudar os usuários a economizar tempo e evitar erros de digitação.
+
+    <Subtitle>👍 Quando usar</Subtitle>
+
+    Você deve usar o componente **Textarea** em uma aplicação web quando quiser permitir que os usuários insiram uma quantidade considerável de texto livre, por exemplo, em um comentário em uma avaliação ou em um formulário de feedback.
+    Uma **Textarea** pode conter um número ilimitado de caracteres e o texto é renderizado em uma largura fixa. Uma **Textarea** é diferente de um campo de entrada de texto de linha única, que é mais adequado para entradas curtas e simples, como nomes ou endereços de e-mail.
+
+    Alguns exemplos são:
+
+    - **Sistemas de gerenciamento de conteúdo**: Aplicações web que permitem que os usuários criem e editem conteúdo da web.
+    - **Plataformas de mídia social**: Aplicações web que permitem que os usuários publiquem e compartilhem seus pensamentos, opiniões ou experiências.
+    - **Pesquisas online**: Aplicações web que permitem que os usuários forneçam feedback ou opiniões sobre vários tópicos.
+
+    <Title>Propriedades</Title>
+
+    <ArgTypes of="mfp-textarea" />
+  </div>
+</div>

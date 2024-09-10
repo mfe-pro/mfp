@@ -1,0 +1,54 @@
+/* -------------------------------------------------------------------------- */
+/*                          Avatar custom properties                          */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+  * @prop --mfp-avatar--background: Avatar background color
+
+  * @prop --mfp-avatar--border-color: Avatar border color
+  * @prop --mfp-avatar--border-style: Avatar border style
+  * @prop --mfp-avatar--border-width: Avatar border width
+
+  * @prop --mfp-avatar--border-radius-circle: Avatar border radius for circle & any size
+  * @prop --mfp-avatar--border-radius-squareXs: Avatar border radius for square & size xsmall
+  * @prop --mfp-avatar--border-radius-squareS: Avatar border radius for square & size small
+  * @prop --mfp-avatar--border-radius-squareM: Avatar border radius for square & size medium/large
+
+  * @prop --mfp-avatar--size-xsmall: Avatar xsmall size
+  * @prop --mfp-avatar--size-small: Avatar small size
+  * @prop --mfp-avatar--size-medium: Avatar medium size
+  * @prop --mfp-avatar--size-large: Avatar large size
+
+  * @prop --mfp-avatar--badge-top-square: Badge top position shape square
+  * @prop --mfp-avatar--badge-left-square: Badge left position shape square
+  * @prop --mfp-avatar--badge-top-circle: Badge top position shape circle
+  * @prop --mfp-avatar--badge-left-circle: Badge left position shape circle
+  */
+
+  --mfp-avatar-background: theme(colors.ui.alt);
+
+  --mfp-avatar--border-color: theme(colors.stroke.tertiary);
+  --mfp-avatar--border-style: solid;
+  --mfp-avatar--border-width: theme(borderWidth.m);
+
+  --mfp-avatar--border-radius-circle: theme(borderRadius.full);
+  --mfp-avatar--border-radius-squareXs: theme(borderRadius.xs);
+  --mfp-avatar--border-radius-squareS: theme(borderRadius.s);
+  --mfp-avatar--border-radius-squareM: theme(borderRadius.m);
+
+  --mfp-avatar--size-xsmall: 24px;
+  --mfp-avatar--size-small: 32px;
+  --mfp-avatar--size-medium: 48px;
+  --mfp-avatar--size-large: 64px;
+
+  --mfp-avatar--font-size-xsmall: theme(fontSize.xs);
+  --mfp-avatar--font-size-small: theme(fontSize.xs);
+  --mfp-avatar--font-size-medium: theme(fontSize.m);
+  --mfp-avatar--font-size-large: theme(fontSize.m);
+
+  --mfp-avatar--badge-top-square: -5px;
+  --mfp-avatar--badge-left-square: 80%;
+  --mfp-avatar--badge-top-circle: 0;
+  --mfp-avatar--badge-left-circle: 75%;
+}

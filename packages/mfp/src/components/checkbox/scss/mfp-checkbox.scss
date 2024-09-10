@@ -1,0 +1,75 @@
+/* -------------------------------------------------------------------------- */
+/*                                Checkbox styles                               */
+/* -------------------------------------------------------------------------- */
+
+@import './mfp-checkbox.variables';
+
+:host {
+  @apply inline-block;
+}
+
+.mfp-checkbox {
+  @apply box-border inline-flex cursor-pointer select-none rounded-s transition-colors duration-300 ease-in-out p-b-xs p-i-xs;
+
+  // Default hover state
+  &:not(.is-checked),
+  &:not(.is-indeterminate) {
+    &:not(.is-disabled):hover .mfp-checkbox__checkbox {
+      @apply border-hover-icon-brand;
+    }
+  }
+
+  // Display background on hover (if enabled)
+  &.has-background:not(.is-disabled):hover {
+    @apply bg-hover-ui-primary;
+  }
+
+  // Checked/Indeterminate hover state
+  &.is-checked,
+  &.is-indeterminate {
+    &:not(.is-disabled):hover .mfp-checkbox__checkbox {
+      @apply bg-hover-ui-brand border-hover-icon-brand;
+    }
+  }
+}
+
+.mfp-checkbox__input {
+  // Checkbox square icon has `FOCUS`
+  &:focus-visible {
+    ~ .mfp-checkbox__checkbox {
+      @apply focus border-stroke-brand;
+    }
+  }
+
+  // Checkbox square icon is `CHECKED/INDETERMINATE`
+  &:checked,
+  &:indeterminate {
+    ~ .mfp-checkbox__checkbox {
+      @apply border-stroke-brand bg-ui-brand;
+    }
+  }
+
+  // Checkbox square icon is `CHECKED/INDETERMINATE` and `DISABLED`
+  &:checked:disabled,
+  &:indeterminate:disabled {
+    ~ .mfp-checkbox__checkbox {
+      @apply opacity-60;
+    }
+  }
+
+  &:disabled {
+    ~ .mfp-checkbox__checkbox {
+      @apply opacity-60;
+    }
+  }
+}
+
+// Checkbox square icon `DEFAULT` state (not checked/indeterminate, not hover, not disabled)
+.mfp-checkbox__checkbox {
+  @apply rounded-[--mfp-checkbox--border-radius] border-[length:--mfp-checkbox--border-width] border-solid border-icon-primary;
+}
+
+.mfp-checkbox__checkbox,
+.mfp-checkbox__label {
+  @apply transition-[color,background-color,border-color,box-shadow] duration-300;
+}

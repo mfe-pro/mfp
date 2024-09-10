@@ -1,0 +1,33 @@
+/* -------------------------------------------------------------------------- */
+/*                          Option group custom properties           */
+/* -------------------------------------------------------------------------- */
+
+:host {
+  /**
+  * @prop --mfp-option-group--background: option group background color
+  * @prop --mfp-option-group--font-size: option group font size
+  * @prop --mfp-option-group--line-height: option group line height
+
+  * @prop --mfp-option-group--label-padding-start: option group header padding start
+  * @prop --mfp-option-group--label-padding-end: option group header padding start
+  * @prop --mfp-option-group--label-paddingY: option group header padding Y axis
+
+  * @prop --mfp-option-group--label-text-padding-start: option group text within label padding start
+  * @prop --mfp-option-group--label-text-padding-end: option group text within label padding start
+
+  * @prop --mfp-option-group--container-padding-start: option group container padding start
+  */
+
+  --mfp-option-group--background: theme(colors.ui.primary);
+  --mfp-option-group--font-size: theme(fontSize.s);
+  --mfp-option-group--line-height: theme(lineHeight.regular);
+
+  --mfp-option-group--label-padding-start: theme(spacing.s);
+  --mfp-option-group--label-padding-end: theme(spacing.s);
+  --mfp-option-group--label-paddingY: theme(spacing.xs);
+
+  --mfp-option-group--label-text-padding-start: theme(spacing.s);
+  --mfp-option-group--label-text-padding-end: theme(spacing.s);
+
+  --mfp-option-group--container-padding-start: theme(spacing.xxl);
+}
